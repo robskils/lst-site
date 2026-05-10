@@ -4557,7 +4557,7 @@ form textarea::placeholder {
 }
 .tour-pill-btn.is-selected {
   background: var(--color-gold);
-  color: oklch(0.18 0.04 170);
+  color: #ffffff;
   border-color: var(--color-gold);
 }
 
