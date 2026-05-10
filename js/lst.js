@@ -166,7 +166,7 @@
       })
         .then(function (r) {
           if (!r.ok) throw new Error(r.status);
-          form.innerHTML = '<p style="font-family:var(--font-serif);font-size:1.5rem;color:var(--color-gold)">Thank you. We\'ll be in touch within one working day.</p>';
+          window.location.href = '/thank-you/';
         })
         .catch(function () {
           if (btn) { btn.disabled = false; btn.textContent = orig; }
