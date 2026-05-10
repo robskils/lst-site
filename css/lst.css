@@ -4537,20 +4537,8 @@ form textarea::placeholder {
   opacity: 1 !important;
 }
 
-/* ── Tour pill checkboxes ────────────────────────────────────────────────── */
-.tour-pill {
-  display: inline-block;
-  cursor: pointer;
-  user-select: none;
-}
-.tour-pill input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-}
-.tour-pill span {
+/* ── Tour pill buttons ───────────────────────────────────────────────────── */
+.tour-pill-btn {
   display: inline-block;
   padding: 0.4rem 0.9rem;
   border: 1.5px solid oklch(0.22 0.04 170 / 0.3);
@@ -4558,12 +4546,16 @@ form textarea::placeholder {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
   font-family: var(--font-sans);
   color: oklch(0.35 0.02 170);
+  background: none;
   line-height: 1.4;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+  user-select: none;
 }
-.tour-pill input:checked + span {
+.tour-pill-btn.is-selected {
   background: var(--color-gold);
   color: oklch(0.18 0.04 170);
   border-color: var(--color-gold);

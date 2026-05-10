@@ -118,17 +118,23 @@
   }
 
   // ── Tour pill selector ───────────────────────────────────────────────────
-  var tourCheckboxes = document.querySelectorAll('input[name="tour-check"]');
+  var pillBtns = document.querySelectorAll('.tour-pill-btn');
   var tourHidden = document.getElementById('tour-hidden');
-  if (tourCheckboxes.length && tourHidden) {
-    function updateTourHidden() {
-      tourHidden.value = Array.from(tourCheckboxes)
-        .filter(function (c) { return c.checked; })
-        .map(function (c) { return c.value; })
-        .join(', ');
-    }
-    tourCheckboxes.forEach(function (cb) {
-      cb.addEventListener('change', updateTourHidden);
+  if (pillBtns.length && tourHidden) {
+    var selected = [];
+    pillBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var tour = btn.getAttribute('data-tour');
+        var idx = selected.indexOf(tour);
+        if (idx === -1) {
+          selected.push(tour);
+          btn.classList.add('is-selected');
+        } else {
+          selected.splice(idx, 1);
+          btn.classList.remove('is-selected');
+        }
+        tourHidden.value = selected.join(', ');
+      });
     });
   }
 
