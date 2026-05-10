@@ -4508,3 +4508,14 @@
     }
   }
 }
+
+/* ── Contact form — stronger text contrast ─────────────────────────────── */
+form input,
+form textarea {
+  color: var(--foreground) !important;
+}
+form input::placeholder,
+form textarea::placeholder {
+  color: oklch(0.38 0.018 60) !important;
+  opacity: 1 !important;
+}
