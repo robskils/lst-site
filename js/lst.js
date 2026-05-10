@@ -114,20 +114,30 @@
     fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  // ── Contact form → Cloudflare Worker (placeholder endpoint) ─────────────
+  // ── Contact form → Cloudflare Worker ────────────────────────────────────
   var form = document.querySelector('form');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var data = Object.fromEntries(new FormData(form));
+      var raw = Object.fromEntries(new FormData(form));
       var btn = form.querySelector('button[type="submit"]');
       var orig = btn ? btn.textContent : '';
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
 
-      fetch('https://enquiries.lisbonsintratours.com', {
+      // Map contact form fields to worker payload
+      var payload = {
+        business:   'lst',
+        fullName:   raw.name        || '',
+        email:      raw.email       || '',
+        date:       raw.dates       || null,
+        groupSize:  raw.party       || null,
+        additional: [raw.interests, raw.message].filter(Boolean).join('\n\n') || null,
+      };
+
+      fetch('https://lst-pp-admin.rls-6d4.workers.dev/api/enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       })
         .then(function (r) {
           if (!r.ok) throw new Error(r.status);
@@ -135,7 +145,7 @@
         })
         .catch(function () {
           if (btn) { btn.disabled = false; btn.textContent = orig; }
-          alert('Sorry, something went wrong. Please email us at hello@lisbonsintratours.com');
+          alert('Sorry, something went wrong. Please email us directly at hello@lisbonsintratours.com');
         });
     });
   }
