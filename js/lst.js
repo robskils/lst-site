@@ -117,6 +117,28 @@
     fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  // ── Tour pill selector ───────────────────────────────────────────────────
+  var pillContainer = document.getElementById('tour-pills');
+  var tourHidden = document.getElementById('tour-hidden');
+  if (pillContainer && tourHidden) {
+    var selected = [];
+    var ACTIVE_STYLE = 'background:var(--color-gold);color:oklch(0.18 0.04 170);border-color:var(--color-gold)';
+    pillContainer.addEventListener('click', function (e) {
+      var btn = e.target.closest('button[data-tour]');
+      if (!btn) return;
+      var tour = btn.getAttribute('data-tour');
+      var idx = selected.indexOf(tour);
+      if (idx === -1) {
+        selected.push(tour);
+        btn.setAttribute('style', btn.getAttribute('style').replace(/background:[^;]+;color:[^;]+;border-color:[^;]+/, '') + ';' + ACTIVE_STYLE);
+      } else {
+        selected.splice(idx, 1);
+        btn.setAttribute('style', btn.getAttribute('style').replace(/;background:[^;]+;color:[^;]+;border-color:[^;]+/, '').replace(/background:[^;]+;color:[^;]+;border-color:[^;]+;?/, ''));
+      }
+      tourHidden.value = selected.join(', ');
+    });
+  }
+
   // ── Contact form → Cloudflare Worker ────────────────────────────────────
   var form = document.querySelector('form');
   if (form) {
@@ -127,14 +149,15 @@
       var orig = btn ? btn.textContent : '';
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
 
-      // Map contact form fields to worker payload
       var payload = {
         business:   'lst',
-        fullName:   raw.name        || '',
-        email:      raw.email       || '',
-        date:       raw.dates       || null,
-        groupSize:  raw.party       || null,
-        additional: [raw.interests, raw.message].filter(Boolean).join('\n\n') || null,
+        fullName:   raw.name     || '',
+        email:      raw.email    || '',
+        date:       raw.dates    || null,
+        groupSize:  raw.party    || null,
+        phone:      raw.phone    || null,
+        tour:       raw.tour     || null,
+        additional: [raw.pickup, raw.message].filter(Boolean).join('\n\n') || null,
       };
 
       fetch('https://enquiries.lisbonsintratours.com/api/enquiry', {
