@@ -3981,23 +3981,40 @@
 .lst-prose h1, .lst-prose h2, .lst-prose h3, .lst-prose h4 {
   font-family: var(--font-serif);
   font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--color-primary);
-  margin-top: 2.4em;
-  margin-bottom: 0.6em;
-  line-height: 1.15;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
 }
 .lst-prose h1 {
   font-size: 2.75rem;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  margin-top: 2.4em;
 }
+/* H2 — main section title, gold */
 .lst-prose h2 {
-  font-size: 2.1rem;
+  font-size: 1.9rem;
+  color: var(--color-gold);
+  letter-spacing: -0.01em;
+  margin-top: 3em;
+  padding-top: 0.4em;
+  border-top: 1px solid oklch(0.78 0.13 85 / 0.25);
 }
+/* H3 — subheading, dark primary, clearly smaller */
 .lst-prose h3 {
-  font-size: 1.55rem;
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  letter-spacing: 0;
+  margin-top: 1.8em;
+  font-style: italic;
 }
 .lst-prose h4 {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  margin-top: 1.6em;
 }
 .lst-prose p {
   color: var(--color-foreground);
