@@ -4519,3 +4519,13 @@ form textarea::placeholder {
   color: oklch(0.38 0.018 60) !important;
   opacity: 1 !important;
 }
+
+/* ── Restore btn styles inside lst-prose ───────────────────────────────── */
+.lst-prose .btn-ink {
+  color: var(--color-primary-foreground) !important;
+  text-decoration: none !important;
+}
+.lst-prose .btn-outline {
+  color: var(--color-primary) !important;
+  text-decoration: none !important;
+}
