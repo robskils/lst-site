@@ -134,7 +134,7 @@
         additional: [raw.interests, raw.message].filter(Boolean).join('\n\n') || null,
       };
 
-      fetch('https://lst-pp-admin.rls-6d4.workers.dev/api/enquiry', {
+      fetch('https://enquiries.lisbonsintratours.com/api/enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
