@@ -157,7 +157,25 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.lisbonsintratours.com/destinations/algarve/</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lisbonsintratours.com/destinations/arrabida/</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.lisbonsintratours.com/destinations/cabo-da-roca/</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lisbonsintratours.com/destinations/coimbra/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -182,6 +200,18 @@
   </url>
   <url>
     <loc>https://www.lisbonsintratours.com/destinations/lisbon/</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lisbonsintratours.com/destinations/nazare/</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lisbonsintratours.com/destinations/obidos/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -212,6 +242,12 @@
   </url>
   <url>
     <loc>https://www.lisbonsintratours.com/destinations/tomar-and-the-knights-templar/</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lisbonsintratours.com/destinations/tomar/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
