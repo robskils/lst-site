@@ -1,10 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="4" fill="#1e3829"/>
-  <text x="16.5" y="22"
-    text-anchor="middle"
-    font-family="Georgia, 'Palatino Linotype', Palatino, 'Book Antiqua', serif"
-    font-size="13"
-    font-weight="normal"
-    letter-spacing="2"
-    fill="#ffffff">LST</text>
+  <rect width="32" height="32" rx="4" fill="#c9a84c"/>
 </svg>
