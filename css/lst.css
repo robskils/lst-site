@@ -4522,10 +4522,12 @@ form textarea::placeholder {
 
 /* ── Restore btn styles inside lst-prose ───────────────────────────────── */
 .lst-prose .btn-ink {
-  color: var(--color-primary-foreground) !important;
+  color: oklch(0.97 0.012 85) !important;
+  background: oklch(0.28 0.04 155) !important;
   text-decoration: none !important;
 }
 .lst-prose .btn-outline {
-  color: var(--color-primary) !important;
+  color: oklch(0.28 0.04 155) !important;
+  background: transparent !important;
   text-decoration: none !important;
 }

@@ -12,8 +12,8 @@
         header.style.boxShadow = '0 1px 0 oklch(1 0 0 / 0.06)';
         if (sintraSpan) sintraSpan.style.color = 'var(--color-gold)';
       } else {
-        header.style.backgroundColor = '';
-        header.style.backdropFilter = '';
+        header.style.backgroundColor = 'oklch(0.18 0.04 170 / 0.35)';
+        header.style.backdropFilter = 'blur(4px)';
         header.style.boxShadow = '';
         if (sintraSpan) sintraSpan.style.color = 'var(--color-ivory)';
       }
