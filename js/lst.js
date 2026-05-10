@@ -3,16 +3,19 @@
 
   // ── Scroll-aware header ──────────────────────────────────────────────────
   var header = document.querySelector('header');
+  var sintraSpan = document.querySelector('header a[aria-label] span');
   if (header) {
     function onScroll() {
       if (window.scrollY > 60) {
         header.style.backgroundColor = 'oklch(0.22 0.04 170 / 0.96)';
         header.style.backdropFilter = 'blur(12px)';
         header.style.boxShadow = '0 1px 0 oklch(1 0 0 / 0.06)';
+        if (sintraSpan) sintraSpan.style.color = 'var(--color-gold)';
       } else {
         header.style.backgroundColor = '';
         header.style.backdropFilter = '';
         header.style.boxShadow = '';
+        if (sintraSpan) sintraSpan.style.color = 'var(--color-ivory)';
       }
     }
     window.addEventListener('scroll', onScroll, { passive: true });
