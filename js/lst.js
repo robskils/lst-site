@@ -118,23 +118,17 @@
   }
 
   // ── Tour pill selector ───────────────────────────────────────────────────
-  var pillContainer = document.getElementById('tour-pills');
+  var tourCheckboxes = document.querySelectorAll('input[name="tour-check"]');
   var tourHidden = document.getElementById('tour-hidden');
-  if (pillContainer && tourHidden) {
-    var selected = [];
-    pillContainer.addEventListener('click', function (e) {
-      var btn = e.target.closest('button[data-tour]');
-      if (!btn) return;
-      var tour = btn.getAttribute('data-tour');
-      var idx = selected.indexOf(tour);
-      if (idx === -1) {
-        selected.push(tour);
-        btn.classList.add('pill-active');
-      } else {
-        selected.splice(idx, 1);
-        btn.classList.remove('pill-active');
-      }
-      tourHidden.value = selected.join(', ');
+  if (tourCheckboxes.length && tourHidden) {
+    function updateTourHidden() {
+      tourHidden.value = Array.from(tourCheckboxes)
+        .filter(function (c) { return c.checked; })
+        .map(function (c) { return c.value; })
+        .join(', ');
+    }
+    tourCheckboxes.forEach(function (cb) {
+      cb.addEventListener('change', updateTourHidden);
     });
   }
 

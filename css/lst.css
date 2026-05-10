@@ -4537,14 +4537,35 @@ form textarea::placeholder {
   opacity: 1 !important;
 }
 
-/* ── Tour pill active state ─────────────────────────────────────────────── */
-#tour-pills button {
-  pointer-events: auto !important;
-  touch-action: manipulation;
+/* ── Tour pill checkboxes ────────────────────────────────────────────────── */
+.tour-pill {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
 }
-#tour-pills button.pill-active {
-  background: var(--color-gold) !important;
-  color: oklch(0.18 0.04 170) !important;
-  border-color: var(--color-gold) !important;
+.tour-pill input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.tour-pill span {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border: 1.5px solid oklch(0.22 0.04 170 / 0.3);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-sans);
+  color: oklch(0.35 0.02 170);
+  line-height: 1.4;
+}
+.tour-pill input:checked + span {
+  background: var(--color-gold);
+  color: oklch(0.18 0.04 170);
+  border-color: var(--color-gold);
 }
 
