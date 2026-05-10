@@ -122,7 +122,6 @@
   var tourHidden = document.getElementById('tour-hidden');
   if (pillContainer && tourHidden) {
     var selected = [];
-    var ACTIVE_STYLE = 'background:var(--color-gold);color:oklch(0.18 0.04 170);border-color:var(--color-gold)';
     pillContainer.addEventListener('click', function (e) {
       var btn = e.target.closest('button[data-tour]');
       if (!btn) return;
@@ -130,10 +129,10 @@
       var idx = selected.indexOf(tour);
       if (idx === -1) {
         selected.push(tour);
-        btn.setAttribute('style', btn.getAttribute('style').replace(/background:[^;]+;color:[^;]+;border-color:[^;]+/, '') + ';' + ACTIVE_STYLE);
+        btn.classList.add('pill-active');
       } else {
         selected.splice(idx, 1);
-        btn.setAttribute('style', btn.getAttribute('style').replace(/;background:[^;]+;color:[^;]+;border-color:[^;]+/, '').replace(/background:[^;]+;color:[^;]+;border-color:[^;]+;?/, ''));
+        btn.classList.remove('pill-active');
       }
       tourHidden.value = selected.join(', ');
     });

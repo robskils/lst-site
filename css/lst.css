@@ -4537,3 +4537,14 @@ form textarea::placeholder {
   opacity: 1 !important;
 }
 
+/* ── Tour pill active state ─────────────────────────────────────────────── */
+#tour-pills button {
+  pointer-events: auto !important;
+  touch-action: manipulation;
+}
+#tour-pills button.pill-active {
+  background: var(--color-gold) !important;
+  color: oklch(0.18 0.04 170) !important;
+  border-color: var(--color-gold) !important;
+}
+
