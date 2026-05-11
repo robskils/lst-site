@@ -3889,8 +3889,9 @@
     transition: all 0.4s ease;
   }
   .btn-gold:hover {
-    background: transparent;
-    color: var(--color-gold);
+    background: var(--color-ivory);
+    border-color: var(--color-ivory);
+    color: var(--color-primary);
   }
   .btn-outline {
     display: inline-flex;
