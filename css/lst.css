@@ -3889,10 +3889,6 @@
     transition: all 0.4s ease;
   }
   .btn-gold:hover {
-    background: transparent;
-    color: var(--color-gold);
-  }
-  .btn-gold-white:hover {
     background: var(--color-ivory);
     border-color: var(--color-ivory);
     color: var(--color-primary);
