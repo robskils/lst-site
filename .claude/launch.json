@@ -4,7 +4,7 @@
     {
       "name": "lst-site",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4321"],
+      "runtimeArgs": ["-m", "http.server", "4321", "--directory", "/Users/robinlumley-savile/Documents/GitHub/lst-site"],
       "port": 4321
     }
   ]
