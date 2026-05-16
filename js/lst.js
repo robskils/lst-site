@@ -227,6 +227,7 @@
         groupSize:     parseInt(raw.party) || null,
         childrenAges:  collectChildrenAges(),
         phone:         raw.phone    || null,
+        hasWhatsApp:   document.getElementById('f-whatsapp') ? document.getElementById('f-whatsapp').checked : false,
         tour:          raw.tour     || null,
         additional:    [raw.pickup, raw.message].filter(Boolean).join('\n\n') || null,
       };
