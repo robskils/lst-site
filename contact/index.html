@@ -23,8 +23,19 @@ textarea.lst-input{resize:vertical}
   </div>
 
   <div>
-    <label for="f-party" class="lst-field-label">Group Size <span style="color:var(--color-gold)">*</span></label>
-    <input id="f-party" type="text" required name="party" placeholder="e.g. 2 adults, 1 child" class="lst-input"/>
+    <label for="f-party" class="lst-field-label">Number of Guests <span style="color:var(--color-gold)">*</span></label>
+    <input id="f-party" type="number" required name="party" placeholder="4" min="1" max="100" class="lst-input" style="max-width:160px"/>
+    <div style="margin-top:10px">
+      <label style="display:inline-flex;align-items:center;gap:10px;cursor:pointer">
+        <input type="checkbox" id="f-has-children" style="width:18px;height:18px;accent-color:var(--color-gold);cursor:pointer;flex-shrink:0">
+        <span style="font-size:0.85rem;color:oklch(0.28 0.03 170)">My group includes children</span>
+      </label>
+      <div id="children-section" style="display:none;margin-top:12px;padding:14px 16px;background:oklch(0.965 0.004 85);border:1.5px solid oklch(0.22 0.04 170 / 0.15);border-radius:2px">
+        <label for="f-child-count" class="lst-field-label" style="margin-bottom:0.35rem">How many children?</label>
+        <select id="f-child-count" class="lst-input" style="max-width:120px;margin-bottom:12px"></select>
+        <div id="child-ages-wrap" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:4px"></div>
+      </div>
+    </div>
   </div>
 
   <div>

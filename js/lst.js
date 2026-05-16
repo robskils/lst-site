@@ -117,6 +117,60 @@
     fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  // ── Children section (contact form) ─────────────────────────────────────
+  var hasChildrenCb = document.getElementById('f-has-children');
+  var childrenSection = document.getElementById('children-section');
+  var childCountSel = document.getElementById('f-child-count');
+  var childAgesWrap = document.getElementById('child-ages-wrap');
+
+  function buildChildAgeInputs(count) {
+    if (!childAgesWrap) return;
+    childAgesWrap.innerHTML = '';
+    for (var i = 1; i <= count; i++) {
+      var label = document.createElement('label');
+      label.style.cssText = 'display:flex;flex-direction:column;gap:5px;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:oklch(0.28 0.03 170)';
+      var input = document.createElement('input');
+      input.type = 'number';
+      input.min = '0';
+      input.max = '17';
+      input.placeholder = 'age';
+      input.id = 'child-age-' + i;
+      input.style.cssText = 'width:72px;padding:0.55rem 0.7rem;border:1.5px solid oklch(0.22 0.04 170 / 0.22);background:oklch(0.985 0.004 85);color:oklch(0.2 0.02 60);font-size:0.9rem;font-family:var(--font-sans);outline:none;border-radius:0;box-sizing:border-box';
+      label.textContent = 'Child ' + i;
+      label.appendChild(input);
+      childAgesWrap.appendChild(label);
+    }
+  }
+
+  function collectChildrenAges() {
+    if (!hasChildrenCb || !hasChildrenCb.checked) return null;
+    var count = parseInt(childCountSel ? childCountSel.value : 0) || 0;
+    var ages = [];
+    for (var i = 1; i <= count; i++) {
+      var inp = document.getElementById('child-age-' + i);
+      ages.push(inp && inp.value !== '' ? inp.value : '?');
+    }
+    return ages.length ? ages.join(', ') : null;
+  }
+
+  if (childCountSel) {
+    for (var c = 1; c <= 10; c++) {
+      var opt = document.createElement('option');
+      opt.value = c; opt.textContent = c;
+      childCountSel.appendChild(opt);
+    }
+    buildChildAgeInputs(1);
+    childCountSel.addEventListener('change', function() {
+      buildChildAgeInputs(parseInt(this.value));
+    });
+  }
+
+  if (hasChildrenCb && childrenSection) {
+    hasChildrenCb.addEventListener('change', function() {
+      childrenSection.style.display = this.checked ? 'block' : 'none';
+    });
+  }
+
   // ── Tour pill selector ───────────────────────────────────────────────────
   var pillBtns = document.querySelectorAll('.tour-pill-btn');
   var tourHidden = document.getElementById('tour-hidden');
@@ -149,14 +203,15 @@
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
 
       var payload = {
-        business:   'lst',
-        fullName:   raw.name     || '',
-        email:      raw.email    || '',
-        date:       raw.dates    || null,
-        groupSize:  raw.party    || null,
-        phone:      raw.phone    || null,
-        tour:       raw.tour     || null,
-        additional: [raw.pickup, raw.message].filter(Boolean).join('\n\n') || null,
+        business:      'lst',
+        fullName:      raw.name     || '',
+        email:         raw.email    || '',
+        date:          raw.dates    || null,
+        groupSize:     parseInt(raw.party) || null,
+        childrenAges:  collectChildrenAges(),
+        phone:         raw.phone    || null,
+        tour:          raw.tour     || null,
+        additional:    [raw.pickup, raw.message].filter(Boolean).join('\n\n') || null,
       };
 
       fetch('https://enquiries.lisbonsintratours.com/api/enquiry', {
