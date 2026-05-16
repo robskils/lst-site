@@ -125,20 +125,37 @@
 
   function buildChildAgeInputs(count) {
     if (!childAgesWrap) return;
+    // preserve existing ages
+    var oldAges = [];
+    childAgesWrap.querySelectorAll('input').forEach(function(inp) { oldAges.push(inp.value); });
     childAgesWrap.innerHTML = '';
     for (var i = 1; i <= count; i++) {
-      var label = document.createElement('label');
-      label.style.cssText = 'display:flex;flex-direction:column;gap:5px;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:oklch(0.28 0.03 170)';
+      var row = document.createElement('div');
+      row.style.cssText = 'display:flex;align-items:center;gap:8px;margin-bottom:6px';
+      var lbl = document.createElement('span');
+      lbl.textContent = 'Child ' + i;
+      lbl.style.cssText = 'font-size:13px;color:oklch(0.52 0.015 85);width:56px;flex-shrink:0';
       var input = document.createElement('input');
       input.type = 'number';
       input.min = '0';
       input.max = '17';
       input.placeholder = 'age';
       input.id = 'child-age-' + i;
-      input.style.cssText = 'width:72px;padding:0.55rem 0.7rem;border:1.5px solid oklch(0.22 0.04 170 / 0.22);background:oklch(0.985 0.004 85);color:oklch(0.2 0.02 60);font-size:0.9rem;font-family:var(--font-sans);outline:none;border-radius:0;box-sizing:border-box';
-      label.textContent = 'Child ' + i;
-      label.appendChild(input);
-      childAgesWrap.appendChild(label);
+      input.value = oldAges[i - 1] || '';
+      input.style.cssText = 'width:80px;padding:5px 8px;border:1.5px solid oklch(0.22 0.04 170 / 0.22);border-radius:4px;font-size:14px;font-family:var(--font-sans);background:oklch(0.985 0.004 85);outline:none;box-sizing:border-box';
+      var badge = document.createElement('span');
+      badge.textContent = '🪑 car seat';
+      badge.style.cssText = 'font-size:12px;color:#e07b00;background:#fff3cd;padding:2px 7px;border-radius:10px;white-space:nowrap;display:' + (input.value !== '' && parseInt(input.value) < 12 ? 'inline' : 'none');
+      input.addEventListener('input', function(b) {
+        return function() {
+          var age = parseInt(this.value);
+          b.style.display = (!isNaN(age) && age < 12) ? 'inline' : 'none';
+        };
+      }(badge));
+      row.appendChild(lbl);
+      row.appendChild(input);
+      row.appendChild(badge);
+      childAgesWrap.appendChild(row);
     }
   }
 
