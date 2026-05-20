@@ -1,0 +1,47 @@
+name: Update sitemap
+
+# Runs on every push to main — regenerates sitemap.xml so new pages
+# are always indexed. Existing lastmod dates are preserved; only new
+# pages get today's date. The updated sitemap is committed back if it
+# changed (commit message includes [skip ci] to avoid an infinite loop).
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # needed to push the sitemap commit back
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history so the bot commit doesn't rebase issues
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate sitemap
+        run: python3 generate_sitemap.py
+
+      - name: Commit updated sitemap (if changed)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet sitemap.xml || (
+            git add sitemap.xml &&
+            git commit -m "chore: regenerate sitemap.xml [skip ci]"
+          )
+
+      - name: Push sitemap commit
+        uses: ad-m/github-push-action@v0.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
