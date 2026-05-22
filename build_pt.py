@@ -108,6 +108,14 @@ def add_en_toggle(html: str, equiv_pt_path: str) -> str:
         return html.replace(target, replacement, 1)
     return html
 
+def strip_pt_toggle(html: str) -> str:
+    """Remove the PT toggle button from a page (used when building PT pages from EN source)."""
+    return re.sub(
+        r'<a [^>]*aria-label="Ver em Português"[^>]*>PT</a>',
+        '',
+        html
+    )
+
 def add_pt_toggle(html: str, equiv_en_path: str) -> str:
     """Insert EN toggle button on PT page after Contacto nav link. Idempotent."""
     if 'aria-label="View in English"' in html:
@@ -1035,7 +1043,8 @@ def process_pt_page(src_path: Path, rel_path: str) -> str:
     # 6. Update og:url to PT version
     html = update_og_url(html, url_path)
 
-    # 7. Add EN toggle
+    # 7. Strip the PT toggle that was on the EN source page, then add EN toggle
+    html = strip_pt_toggle(html)
     html = add_pt_toggle(html, equiv_en)
 
     return html
