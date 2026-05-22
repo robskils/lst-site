@@ -2,21 +2,24 @@
 import glob, os
 from datetime import date
 
-DOMAIN = "https://www.lisbonsintratours.com"
-DST = "/Users/robinlumley-savile/Documents/GitHub/lst-site"
+DOMAIN = "https://lisbonsintratours.com"
+DST = os.path.dirname(os.path.abspath(__file__))
 
 # Priority rules
 def priority(path):
     if path == "/": return "1.0"
     if path in ("/tours/", "/destinations/", "/contact/", "/about/"): return "0.9"
+    if path in ("/pt/", "/pt/tours/", "/pt/destinations/", "/pt/contact/", "/pt/about/"): return "0.9"
     if path.startswith("/tours/") or path.startswith("/destinations/"): return "0.8"
+    if path.startswith("/pt/tours/") or path.startswith("/pt/destinations/"): return "0.8"
     if path == "/blog/": return "0.7"
-    if path.startswith("/blog/"): return "0.6"
+    if path == "/pt/blog/": return "0.7"
+    if path.startswith("/blog/") or path.startswith("/pt/blog/"): return "0.6"
     return "0.5"
 
 def changefreq(path):
-    if path in ("/", "/tours/", "/destinations/", "/blog/"): return "weekly"
-    if path.startswith("/blog/"): return "monthly"
+    if path in ("/", "/tours/", "/destinations/", "/blog/", "/pt/", "/pt/tours/", "/pt/destinations/", "/pt/blog/"): return "weekly"
+    if path.startswith("/blog/") or path.startswith("/pt/blog/"): return "monthly"
     return "monthly"
 
 # Collect all pages
