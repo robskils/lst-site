@@ -295,6 +295,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lisbonsintratours.com/es/destinations/obidos/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/es/destinations/tomar/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lisbonsintratours.com/es/lisbon-art-tours/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -362,6 +374,18 @@
   </url>
   <url>
     <loc>https://lisbonsintratours.com/fr/contact/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/destinations/obidos/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/destinations/tomar/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
