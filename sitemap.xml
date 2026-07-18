@@ -295,7 +295,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lisbonsintratours.com/es/lisbon-art-tours/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lisbonsintratours.com/es/private-group-tours-portugal/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/es/sintra-tours/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -319,7 +331,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lisbonsintratours.com/fr/lisbon-art-tours/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lisbonsintratours.com/fr/private-group-tours-portugal/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/sintra-tours/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
