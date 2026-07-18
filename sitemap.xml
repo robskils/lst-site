@@ -283,6 +283,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lisbonsintratours.com/es/blog/lisbons-luxury-private-events/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lisbonsintratours.com/es/blog/the-best-restaurants-in-sintra-with-a-view/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -386,6 +392,12 @@
   </url>
   <url>
     <loc>https://lisbonsintratours.com/fr/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/blog/lisbons-luxury-private-events/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
