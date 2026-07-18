@@ -209,7 +209,7 @@
     });
   }
 
-  // ── Language switcher ────────────────────────────────────────────────────
+  // ── Language switcher dropdown ───────────────────────────────────────────
   (function () {
     if (!header) return;
     var path = window.location.pathname;
@@ -223,11 +223,12 @@
     else if (path.startsWith('/fr/')) { lang = 'fr'; canonical = path.slice(3); }
     if (canonical !== '/' && !canonical.endsWith('/')) canonical += '/';
 
+    var LABELS = { en: 'English', pt: 'Português', es: 'Español', fr: 'Français' };
     var langs = [
-      { code: 'en', label: 'EN', href: canonical },
-      { code: 'pt', label: 'PT', href: '/pt' + canonical },
-      { code: 'es', label: 'ES', href: '/es' + canonical },
-      { code: 'fr', label: 'FR', href: '/fr' + canonical },
+      { code: 'en', href: canonical },
+      { code: 'pt', href: '/pt' + canonical },
+      { code: 'es', href: '/es' + canonical },
+      { code: 'fr', href: '/fr' + canonical },
     ];
 
     var existing = null;
@@ -241,19 +242,52 @@
     if (!existing) return;
 
     var wrap = document.createElement('span');
-    wrap.style.cssText = 'display:inline-flex;align-items:center;gap:3px;margin-left:0.5rem';
-    var base = 'padding:0.2rem 0.42rem;border:1px solid rgba(245,240,232,0.35);border-radius:3px;font-size:0.65rem;letter-spacing:0.14em;text-decoration:none;font-family:var(--font-sans)';
+    wrap.style.cssText = 'position:relative;display:inline-block;margin-left:0.5rem';
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = lang.toUpperCase() + ' ▾';
+    btn.style.cssText = 'background:none;border:1px solid rgba(245,240,232,0.35);border-radius:3px;padding:0.2rem 0.55rem;font-size:0.65rem;letter-spacing:0.14em;color:rgba(245,240,232,0.7);font-family:var(--font-sans);cursor:pointer;line-height:1.4';
+    btn.setAttribute('aria-haspopup', 'listbox');
+    btn.setAttribute('aria-expanded', 'false');
+
+    var menu = document.createElement('div');
+    menu.style.cssText = 'display:none;position:absolute;top:calc(100% + 6px);right:0;background:oklch(0.22 0.04 170 / 0.97);backdrop-filter:blur(12px);border:1px solid rgba(245,240,232,0.18);border-radius:4px;min-width:130px;z-index:200;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.35)';
+    menu.setAttribute('role', 'listbox');
+
     langs.forEach(function (l) {
-      var a = document.createElement('a');
-      a.href = l.href;
-      a.textContent = l.label;
-      a.style.cssText = base + ';color:' + (l.code === lang ? 'rgba(245,240,232,0.95);background:rgba(245,240,232,0.1)' : 'rgba(245,240,232,0.42)');
-      if (l.code !== lang) {
-        a.addEventListener('mouseover', function () { this.style.color = 'rgba(245,240,232,0.75)'; });
-        a.addEventListener('mouseout',  function () { this.style.color = 'rgba(245,240,232,0.42)'; });
+      var item = document.createElement('a');
+      item.href = l.href;
+      item.textContent = LABELS[l.code];
+      var isCurrent = l.code === lang;
+      item.style.cssText = 'display:block;padding:0.55rem 0.9rem;font-size:0.7rem;letter-spacing:0.1em;text-decoration:none;font-family:var(--font-sans);color:' + (isCurrent ? 'rgba(245,240,232,0.95)' : 'rgba(245,240,232,0.5)') + ';background:' + (isCurrent ? 'rgba(245,240,232,0.08)' : 'transparent');
+      if (!isCurrent) {
+        item.addEventListener('mouseover', function () { this.style.background = 'rgba(245,240,232,0.06)'; this.style.color = 'rgba(245,240,232,0.85)'; });
+        item.addEventListener('mouseout',  function () { this.style.background = 'transparent'; this.style.color = 'rgba(245,240,232,0.5)'; });
       }
-      wrap.appendChild(a);
+      menu.appendChild(item);
     });
+
+    var open = false;
+    function toggleMenu(e) {
+      e.stopPropagation();
+      open = !open;
+      menu.style.display = open ? 'block' : 'none';
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = lang.toUpperCase() + (open ? ' ▴' : ' ▾');
+    }
+    function closeMenu() {
+      open = false;
+      menu.style.display = 'none';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.textContent = lang.toUpperCase() + ' ▾';
+    }
+    btn.addEventListener('click', toggleMenu);
+    document.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+
+    wrap.appendChild(btn);
+    wrap.appendChild(menu);
     existing.parentNode.replaceChild(wrap, existing);
   }());
 
