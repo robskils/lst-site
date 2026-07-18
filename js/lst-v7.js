@@ -247,7 +247,7 @@
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.textContent = lang.toUpperCase() + ' ▾';
-    btn.style.cssText = 'background:none;border:1px solid rgba(245,240,232,0.35);border-radius:3px;padding:0.2rem 0.55rem;font-size:0.65rem;letter-spacing:0.14em;color:rgba(245,240,232,0.7);font-family:var(--font-sans);cursor:pointer;line-height:1.4';
+    btn.style.cssText = 'background:none;border:1px solid rgba(245,240,232,0.6);border-radius:3px;padding:0.2rem 0.55rem;font-size:0.65rem;letter-spacing:0.14em;color:#f5f0e8;font-family:var(--font-sans);cursor:pointer;line-height:1.4';
     btn.setAttribute('aria-haspopup', 'listbox');
     btn.setAttribute('aria-expanded', 'false');
 
