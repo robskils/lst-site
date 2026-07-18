@@ -283,7 +283,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lisbonsintratours.com/es/car-service/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lisbonsintratours.com/es/contact/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/es/private-group-tours-portugal/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -295,7 +307,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lisbonsintratours.com/fr/car-service/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lisbonsintratours.com/fr/contact/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/private-group-tours-portugal/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
