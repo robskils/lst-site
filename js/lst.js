@@ -209,6 +209,54 @@
     });
   }
 
+  // ── Language switcher ────────────────────────────────────────────────────
+  (function () {
+    if (!header) return;
+    var path = window.location.pathname;
+    var lang = 'en';
+    var canonical = path;
+    if (path === '/pt/' || path === '/pt') { lang = 'pt'; canonical = '/'; }
+    else if (path.startsWith('/pt/')) { lang = 'pt'; canonical = path.slice(3); }
+    else if (path === '/es/' || path === '/es') { lang = 'es'; canonical = '/'; }
+    else if (path.startsWith('/es/')) { lang = 'es'; canonical = path.slice(3); }
+    else if (path === '/fr/' || path === '/fr') { lang = 'fr'; canonical = '/'; }
+    else if (path.startsWith('/fr/')) { lang = 'fr'; canonical = path.slice(3); }
+    if (canonical !== '/' && !canonical.endsWith('/')) canonical += '/';
+
+    var langs = [
+      { code: 'en', label: 'EN', href: canonical },
+      { code: 'pt', label: 'PT', href: '/pt' + canonical },
+      { code: 'es', label: 'ES', href: '/es' + canonical },
+      { code: 'fr', label: 'FR', href: '/fr' + canonical },
+    ];
+
+    var existing = null;
+    var headerLinks = header.querySelectorAll('a');
+    for (var i = 0; i < headerLinks.length; i++) {
+      var txt = headerLinks[i].textContent.trim();
+      if (/^(EN|PT|ES|FR)$/.test(txt) && headerLinks[i].style.border) {
+        existing = headerLinks[i]; break;
+      }
+    }
+    if (!existing) return;
+
+    var wrap = document.createElement('span');
+    wrap.style.cssText = 'display:inline-flex;align-items:center;gap:3px;margin-left:0.5rem';
+    var base = 'padding:0.2rem 0.42rem;border:1px solid rgba(245,240,232,0.35);border-radius:3px;font-size:0.65rem;letter-spacing:0.14em;text-decoration:none;font-family:var(--font-sans)';
+    langs.forEach(function (l) {
+      var a = document.createElement('a');
+      a.href = l.href;
+      a.textContent = l.label;
+      a.style.cssText = base + ';color:' + (l.code === lang ? 'rgba(245,240,232,0.95);background:rgba(245,240,232,0.1)' : 'rgba(245,240,232,0.42)');
+      if (l.code !== lang) {
+        a.addEventListener('mouseover', function () { this.style.color = 'rgba(245,240,232,0.75)'; });
+        a.addEventListener('mouseout',  function () { this.style.color = 'rgba(245,240,232,0.42)'; });
+      }
+      wrap.appendChild(a);
+    });
+    existing.parentNode.replaceChild(wrap, existing);
+  }());
+
   // ── Contact form → Cloudflare Worker ────────────────────────────────────
   var form = document.querySelector('form');
   if (form) {
