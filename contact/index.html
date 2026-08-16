@@ -72,17 +72,14 @@ textarea.lst-input{resize:vertical}
 .bk-summary span:last-child  { color:oklch(0.28 0.03 170); text-align:right; }
 </style>
 </head><body><div class="min-h-screen flex flex-col"><header class="fixed inset-x-0 top-0 z-50 transition-all duration-500 bg-transparent"><div class="container-page flex items-center justify-between h-20"><a aria-label="Lisbon Sintra Tours — home" href="/" class="flex items-center gap-3 group"><div class="leading-tight text-ivory"><div style="font-family:var(--font-serif);font-size:1.25rem;font-weight:500;letter-spacing:0.02em">Lisbon <span style="color:var(--color-gold)">Sintra</span> Tours</div></div></a><nav class="hidden md:flex items-center gap-6"><a href="/" class="text-[0.72rem] uppercase tracking-[0.28em] font-medium transition-colors text-ivory/85 hover:text-gold">Home</a><a href="/tours/" class="text-[0.72rem] uppercase tracking-[0.28em] font-medium transition-colors text-ivory/85 hover:text-gold">Tours</a><a href="/destinations/" class="text-[0.72rem] uppercase tracking-[0.28em] font-medium transition-colors text-ivory/85 hover:text-gold">Destinations</a><a href="/blog/" class="text-[0.72rem] uppercase tracking-[0.28em] font-medium transition-colors text-ivory/85 hover:text-gold">Journal</a><a href="/about/" class="text-[0.72rem] uppercase tracking-[0.28em] font-medium transition-colors text-ivory/85 hover:text-gold">About</a><a style="color:var(--color-gold)" href="/contact/" class="text-[0.72rem] uppercase tracking-[0.28em] font-medium transition-colors text-ivory/85 hover:text-gold" aria-current="page">Contact</a></nav><a href="/pt/contact/" style="margin-left:0.5rem;padding:0.2rem 0.55rem;border:1px solid rgba(245,240,232,0.35);border-radius:3px;font-size:0.65rem;letter-spacing:0.14em;color:rgba(245,240,232,0.7);text-decoration:none;font-family:var(--font-sans)" aria-label="Ver em Português">PT</a><a class="hidden md:inline-flex items-center text-[0.72rem] uppercase tracking-[0.28em] font-medium px-5 py-3 border transition-all border-ivory/60 text-ivory hover:bg-ivory hover:text-primary hover:border-ivory active" href="/contact/" aria-current="page">Plan your journey</a><button class="md:hidden p-2 text-ivory" aria-label="Toggle menu" aria-expanded="false"><span class="sr-only">Menu</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18"></path><path d="M3 12h18"></path><path d="M3 17h18"></path></svg></button></div></header><main class="flex-1"><section class="relative h-[68vh] min-h-[480px] w-full overflow-hidden"><div class="absolute inset-0"><img src="/images/douro-valley.jpg" alt="" class="absolute inset-0 h-full w-full object-cover ken-burns"/><div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-black/60"></div></div><div class="relative h-full container-page flex flex-col justify-end pb-20 md:pb-24" style="color:var(--color-ivory)"><div class="eyebrow fade-up" style="color:var(--color-gold)">Begin</div><h1 class="display text-5xl md:text-7xl mt-5 max-w-4xl fade-up fade-up-delay-1" style="color:var(--color-ivory)">Tell us about your Portugal.</h1><p class="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-ivory/85 fade-up fade-up-delay-2">A few details — we&#x27;ll write back within one working day with thoughts, an outline, and a quiet recommendation or two.</p></div></section><section class="container-page py-24 md:py-32 grid md:grid-cols-12 gap-16"><div class="md:col-span-5"><div class="eyebrow"><span class="rule mr-3"></span>Reach us directly</div><h2 class="display text-3xl md:text-5xl mt-5">Some journeys begin with a letter.</h2><div class="mt-10 space-y-7 text-base"><div><div class="eyebrow text-[0.6rem]">Email</div><a href="mailto:contact@lisbonsintratours.com" class="display text-2xl mt-2 inline-block hover:text-gold transition-colors" style="transition:color .3s">contact@lisbonsintratours.com</a></div><div style="display:none"><div class="eyebrow text-[0.6rem]">Phone &amp; WhatsApp</div><a href="tel:+351000000000" class="display text-2xl mt-2 inline-block hover:text-gold transition-colors">+351 000 000 000</a></div><div><div class="eyebrow text-[0.6rem]">Office hours</div><p class="mt-2 text-muted-foreground">Mon–Sat, 09:00 – 19:00 WET</p></div><div><div class="eyebrow text-[0.6rem]">Atelier</div><p class="mt-2 text-muted-foreground">Lisbon, Portugal</p></div></div></div><div class="md:col-span-6 md:col-start-7"><form class="space-y-5" id="lst-book" data-multistep>
-
   <div class="bk-progress">
     <span class="bk-dot is-on" id="bk-d1">1</span><span class="bk-line"></span>
     <span class="bk-dot" id="bk-d2">2</span><span class="bk-line"></span>
     <span class="bk-dot" id="bk-d3">3</span>
-    <span class="bk-stepname" id="bk-stepname">Your trip</span>
+    <span class="bk-stepname" id="bk-stepname"></span>
   </div>
 
-  <!-- STEP 1 — the trip -->
   <div class="bk-step is-on" id="bk-s1">
-
     <div>
       <label for="f-dates" class="lst-field-label">Tour Date <span style="color:var(--color-gold)">*</span></label>
       <input id="f-dates" type="date" name="dates" class="lst-input"/>
@@ -91,15 +88,15 @@ textarea.lst-input{resize:vertical}
 
     <div style="margin-top:1.25rem">
       <label class="lst-field-label">Who is coming? <span style="color:var(--color-gold)">*</span></label>
-      <span class="lst-field-hint">Ages set the entry ticket prices and the car seats we need to fit.</span>
+      <span class="lst-field-hint">Ages set the entry ticket prices, and tell us which child seats to fit.</span>
       <div class="bk-party">
         <div class="bk-prow"><span><b>Adults</b><i>18&ndash;64</i></span><input type="number" min="0" max="60" value="0" id="p-adults"></div>
         <div class="bk-prow"><span><b>Youth</b><i>6&ndash;17</i></span><input type="number" min="0" max="60" value="0" id="p-youth"></div>
         <div class="bk-prow"><span><b>Seniors</b><i>65 and over</i></span><input type="number" min="0" max="60" value="0" id="p-seniors"></div>
-        <div class="bk-prow"><span><b>Children</b><i>under 6 &middot; free entry</i></span><input type="number" min="0" max="20" value="0" id="p-children"></div>
+        <div class="bk-prow"><span><b>Children</b><i>under 6</i></span><input type="number" min="0" max="20" value="0" id="p-children"></div>
       </div>
       <div id="bk-ages"></div>
-      <div class="bk-total" id="bk-total">No guests yet</div>
+      <div class="bk-total" id="bk-total"></div>
       <div class="bk-err" id="e-party">Please tell us who is coming.</div>
     </div>
 
@@ -110,19 +107,8 @@ textarea.lst-input{resize:vertical}
         <button type="button" class="tour-type-tab is-active" id="tab-single" onclick="switchTourTab('single')">Day Tours</button>
         <button type="button" class="tour-type-tab" id="tab-multi" onclick="switchTourTab('multi')">Multi-Day</button>
       </div>
-      <div class="flex flex-wrap gap-2" id="tour-group-single">
-        <button type="button" class="tour-pill-btn" data-tour="Sintra">Sintra</button>
-        <button type="button" class="tour-pill-btn" data-tour="Lisbon &amp; Belém">Lisbon &amp; Belém</button>
-        <button type="button" class="tour-pill-btn" data-tour="Lisbon Sunset Cruise">Lisbon Sunset Cruise</button>
-        <button type="button" class="tour-pill-btn" data-tour="Évora &amp; Alentejo">Évora &amp; Alentejo</button>
-        <button type="button" class="tour-pill-btn" data-tour="Fátima &amp; Central Portugal">Fátima &amp; Central Portugal</button>
-        <button type="button" class="tour-pill-btn" data-tour="Wine Tour">Wine Tour</button>
-      </div>
-      <div class="flex flex-wrap gap-2" id="tour-group-multi" style="display:none">
-        <button type="button" class="tour-pill-btn" data-tour="Porto &amp; Aveiro">Porto &amp; Aveiro</button>
-        <button type="button" class="tour-pill-btn" data-tour="Relaxing Algarve">Relaxing Algarve</button>
-        <button type="button" class="tour-pill-btn" data-tour="Relaxing Portugal">Relaxing Portugal</button>
-      </div>
+      <div class="flex flex-wrap gap-2" id="tour-group-single"><button type="button" class="tour-pill-btn" data-tour="Sintra">Sintra</button><button type="button" class="tour-pill-btn" data-tour="Lisbon &amp; Belém">Lisbon &amp; Belém</button><button type="button" class="tour-pill-btn" data-tour="Lisbon Sunset Cruise">Lisbon Sunset Cruise</button><button type="button" class="tour-pill-btn" data-tour="Évora &amp; Alentejo">Évora &amp; Alentejo</button><button type="button" class="tour-pill-btn" data-tour="Fátima &amp; Central Portugal">Fátima &amp; Central Portugal</button><button type="button" class="tour-pill-btn" data-tour="Wine Tour">Wine Tour</button></div>
+      <div class="flex flex-wrap gap-2" id="tour-group-multi" style="display:none"><button type="button" class="tour-pill-btn" data-tour="Porto &amp; Aveiro">Porto &amp; Aveiro</button><button type="button" class="tour-pill-btn" data-tour="Relaxing Algarve">Relaxing Algarve</button><button type="button" class="tour-pill-btn" data-tour="Relaxing Portugal">Relaxing Portugal</button></div>
       <input type="hidden" name="tour" id="tour-hidden"/>
       <div class="bk-err" id="e-tour">Please choose at least one tour.</div>
     </div>
@@ -130,21 +116,14 @@ textarea.lst-input{resize:vertical}
     <div class="bk-nav"><button type="button" class="btn-gold" onclick="bkGo(2)">Continue</button></div>
   </div>
 
-  <!-- STEP 2 — how the day works -->
   <div class="bk-step" id="bk-s2">
     <div class="bk-note" id="bk-guide-note">
-      <b>Your guide also drives</b>
-      <p>For a group of your size your guide drives the vehicle himself. He shares the history and the stories along the way and sees you to the entrance of each site, but waits with the vehicle while you go inside.</p>
+      <b>Your guide also drives</b><p>For a group of your size your guide drives the vehicle himself. He shares the history and the stories along the way and sees you to the entrance of each site, but waits with the vehicle while you go inside.</p>
     </div>
-
     <label class="bk-upgrade" id="bk-upgrade">
       <input type="checkbox" id="f-dedicated">
-      <span>
-        <b>Add a dedicated guide</b>
-        <p>A second guide travels with you and comes inside the palaces and monuments, so there is someone with you throughout. This means a separate driver, so it costs more.</p>
-      </span>
+      <span><b>Add a dedicated guide</b><p>A second guide travels with you and comes inside the palaces and monuments, so there is someone with you throughout. This means a separate driver, so it costs more.</p></span>
     </label>
-
     <div style="margin-top:1.5rem">
       <label class="lst-field-label">Shall we buy your entry tickets?</label>
       <span class="lst-field-hint">Sintra sells out in high season and the queues at the gate are long. We can buy ahead and add them to your quote.</span>
@@ -153,27 +132,23 @@ textarea.lst-input{resize:vertical}
         <label class="bk-choice"><input type="radio" name="tickets" value="1"><span>Yes please, buy them for us</span></label>
       </div>
     </div>
-
     <div class="bk-nav">
       <button type="button" class="bk-back" onclick="bkGo(1)">Back</button>
       <button type="button" class="btn-gold" onclick="bkGo(3)">Continue</button>
     </div>
   </div>
 
-  <!-- STEP 3 — who you are -->
   <div class="bk-step" id="bk-s3">
     <div>
       <label for="f-name" class="lst-field-label">Full Name <span style="color:var(--color-gold)">*</span></label>
-      <input id="f-name" type="text" name="name" placeholder="Your full name" class="lst-input"/>
+      <input id="f-name" type="text" name="name" class="lst-input"/>
       <div class="bk-err" id="e-name">Please enter your name.</div>
     </div>
-
     <div style="margin-top:1.25rem">
       <label for="f-email" class="lst-field-label">Email Address <span style="color:var(--color-gold)">*</span></label>
       <input id="f-email" type="email" name="email" placeholder="your@email.com" class="lst-input"/>
       <div class="bk-err" id="e-email">Please enter a valid email address.</div>
     </div>
-
     <div style="margin-top:1.25rem">
       <label for="f-phone" class="lst-field-label">Phone</label>
       <input id="f-phone" type="tel" name="phone" placeholder="+351 ..." class="lst-input"/>
@@ -182,214 +157,53 @@ textarea.lst-input{resize:vertical}
         <span style="font-size:0.85rem;color:oklch(0.28 0.03 170)">This number has WhatsApp</span>
       </label>
     </div>
-
     <div style="margin-top:1.25rem">
       <label for="f-pickup" class="lst-field-label">Where are you staying in Lisbon?</label>
       <span class="lst-field-hint">So we know where to collect you &mdash; an area is enough if you have not booked yet.</span>
       <input id="f-pickup" type="text" name="pickup" placeholder="Hotel name or address" class="lst-input"/>
     </div>
-
     <div style="margin-top:1.25rem">
       <label for="f-message" class="lst-field-label">Anything else?</label>
       <span class="lst-field-hint">Special interests, an occasion, mobility needs &mdash; anything that helps us plan.</span>
       <textarea id="f-message" name="message" rows="4" placeholder="Tell us a little about the trip you have in mind…" class="lst-input"></textarea>
     </div>
-
     <div class="bk-summary" id="bk-summary"></div>
-
     <div class="bk-nav">
       <button type="button" class="bk-back" onclick="bkGo(2)">Back</button>
       <button type="submit" class="btn-gold">Send enquiry</button>
     </div>
   </div>
-
-</form></div></section></main><footer class="bg-primary text-primary-foreground"><div class="container-page py-20 grid gap-12 md:grid-cols-4"><div class="md:col-span-2"><div class="eyebrow" style="color:var(--color-gold)">Lisbon Sintra Tours</div><h3 class="display text-3xl md:text-4xl mt-4 text-primary-foreground" style="color:var(--color-ivory)">Portugal, unhurried.</h3><p class="mt-6 max-w-md text-primary-foreground/70 leading-relaxed">Bespoke private tours and curated travel experiences across Lisbon, Sintra, and beyond — designed for travellers who prefer the road less travelled.</p></div><div><div class="eyebrow" style="color:var(--color-gold)">Explore</div><ul class="mt-5 space-y-3 text-sm text-primary-foreground/80"><li><a href="/tours/" class="hover:text-gold transition-colors">Tours</a></li><li><a href="/destinations/" class="hover:text-gold transition-colors">Destinations</a></li><li><a href="/about/" class="hover:text-gold transition-colors">About</a></li><li><a class="hover:text-gold transition-colors active" href="/contact/" aria-current="page">Contact</a></li></ul></div><div><div class="eyebrow" style="color:var(--color-gold)">Reach us</div><ul class="mt-5 space-y-3 text-sm text-primary-foreground/80"><li>Lisbon, Portugal</li><li><a href="mailto:contact@lisbonsintratours.com" class="hover:text-gold transition-colors">contact@lisbonsintratours.com</a></li></ul></div></div><div class="border-t border-primary-foreground/10"><div class="container-page py-6 flex flex-col md:flex-row gap-3 justify-between text-xs text-primary-foreground/50"><div>© 2026 Lisbon Sintra Tours. All rights reserved.</div><div class="tracking-[0.28em] uppercase">Crafted in Portugal</div><div><a href="https://incremento.co" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Design by Incremento</a></div></div></div></footer></div><script>
-/* ── Multi-step enquiry ───────────────────────────────────────────────────
-   Three steps: the trip, how the day works, who you are. The party is four
-   age counts rather than one number, because the bands decide both the entry
-   ticket prices and the child seats that have to be in the vehicle.
-
-   This registers before /js/lst-v10.js (which is deferred) and the form is
-   marked data-multistep, so the site-wide single-page handler stands down. */
-(function () {
-  var DEDICATED_MAX = 8;   // above this the guide is not driving anyway
-  var step = 1, chosen = [];
-
-  function $(id) { return document.getElementById(id); }
-  function n(id) { var v = parseInt(($(id) || {}).value, 10); return isNaN(v) || v < 0 ? 0 : v; }
-
-  function party() {
-    var c = { adults: n('p-adults'), youth: n('p-youth'), seniors: n('p-seniors'), children: n('p-children') };
-    c.total = c.adults + c.youth + c.seniors + c.children;
-    return c;
-  }
-
-  // Age boxes appear as the counts change and keep whatever was typed.
-  function ages(kind, count, label, min, max) {
-    var wrap = $('bk-ages'), box = $('ages-' + kind);
-    if (!count) { if (box) box.parentNode.removeChild(box); return; }
-    if (!box) { box = document.createElement('div'); box.id = 'ages-' + kind; wrap.appendChild(box); }
-    var had = [].map.call(box.querySelectorAll('input'), function (i) { return i.value; });
-    box.innerHTML = '<div class="bk-agelabel">' + label + ' ages</div>';
-    for (var i = 1; i <= count; i++) {
-      var row = document.createElement('div');
-      row.className = 'bk-agerow';
-      row.innerHTML = '<span>' + label + ' ' + i + '</span>';
-      var inp = document.createElement('input');
-      inp.type = 'number'; inp.min = min; inp.max = max; inp.placeholder = 'age';
-      inp.id = 'age-' + kind + '-' + i; inp.value = had[i - 1] || '';
-      row.appendChild(inp); box.appendChild(row);
-    }
-  }
-
-  function recompute() {
-    var c = party();
-    ages('youth', c.youth, 'Youth', 6, 17);
-    ages('child', c.children, 'Child', 0, 5);
-    var bits = [];
-    if (c.adults)   bits.push(c.adults + ' adult' + (c.adults === 1 ? '' : 's'));
-    if (c.youth)    bits.push(c.youth + ' youth');
-    if (c.seniors)  bits.push(c.seniors + ' senior' + (c.seniors === 1 ? '' : 's'));
-    if (c.children) bits.push(c.children + ' under 6');
-    $('bk-total').innerHTML = c.total
-      ? '<b>' + c.total + ' guest' + (c.total === 1 ? '' : 's') + '</b> — ' + bits.join(', ')
-      : 'No guests yet';
-    if (c.total) err('e-party', false);
-
-    // The guide note is only true for a small group, so only show it then.
-    var small = c.total > 0 && c.total <= DEDICATED_MAX;
-    $('bk-guide-note').style.display = small ? '' : 'none';
-    $('bk-upgrade').style.display    = small ? '' : 'none';
-    if (!small && $('f-dedicated').checked) { $('f-dedicated').checked = false; $('bk-upgrade').classList.remove('is-on'); }
-  }
-
-  function collectAges() {
-    var c = party(), out = [];
-    for (var i = 1; i <= c.youth; i++)    out.push(($('age-youth-' + i) || {}).value || '?');
-    for (var j = 1; j <= c.children; j++) out.push(($('age-child-' + j) || {}).value || '?');
-    return out.length ? out.join(', ') : null;
-  }
-
-  function err(id, on) { var e = $(id); if (e) e.classList[on ? 'add' : 'remove']('is-on'); }
-
-  function valid(s) {
-    var ok = true;
-    if (s === 1) {
-      if (!$('f-dates').value) { err('e-date', true); ok = false; } else err('e-date', false);
-      if (party().total < 1)   { err('e-party', true); ok = false; } else err('e-party', false);
-      if (!chosen.length)      { err('e-tour', true); ok = false; } else err('e-tour', false);
-    }
-    return ok;
-  }
-
-  window.bkGo = function (to) {
-    if (to > step && !valid(step)) return;
-    step = to;
-    [1, 2, 3].forEach(function (i) {
-      $('bk-s' + i).classList.toggle('is-on', i === to);
-      var d = $('bk-d' + i);
-      d.classList.toggle('is-on', i === to);
-      d.classList.toggle('is-done', i < to);
-    });
-    $('bk-stepname').textContent = ['Your trip', 'How the day works', 'Your details'][to - 1];
-    if (to === 3) summary();
-    var f = $('lst-book');
-    if (f) window.scrollTo({ top: f.getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth' });
-  };
-
-  function summary() {
-    var c = party(), bits = [];
-    if (c.adults)   bits.push(c.adults + ' adult' + (c.adults === 1 ? '' : 's'));
-    if (c.youth)    bits.push(c.youth + ' youth (6-17)');
-    if (c.seniors)  bits.push(c.seniors + ' senior' + (c.seniors === 1 ? '' : 's') + ' (65+)');
-    if (c.children) bits.push(c.children + ' under 6');
-    var d = $('f-dates').value, rows = [];
-    if (chosen.length) rows.push(['Tours', chosen.join(', ')]);
-    if (d) rows.push(['Date', new Date(d + 'T12:00:00').toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' })]);
-    if (c.total) rows.push(['Guests', c.total + ' — ' + bits.join(', ')]);
-    if ($('f-dedicated').checked) rows.push(['Guide', 'Dedicated guide, coming inside with you']);
-    var t = document.querySelector('input[name="tickets"]:checked');
-    if (t && t.value === '1') rows.push(['Tickets', 'Please buy them for us']);
-    $('bk-summary').innerHTML = rows.map(function (r) {
-      return '<div><span>' + r[0] + '</span><span>' + r[1].replace(/</g, '&lt;') + '</span></div>';
-    }).join('');
-  }
-
-  // Tours are multi-select: people rarely want exactly one.
-  function wireTours() {
-    [].forEach.call(document.querySelectorAll('.tour-pill-btn'), function (b) {
-      b.addEventListener('click', function () {
-        var name = b.getAttribute('data-tour');
-        var at = chosen.indexOf(name);
-        if (at === -1) { chosen.push(name); b.classList.add('is-active'); }
-        else { chosen.splice(at, 1); b.classList.remove('is-active'); }
-        $('tour-hidden').value = chosen.join(', ');
-        if (chosen.length) err('e-tour', false);
-      });
-    });
-  }
-
-  function init() {
-    ['p-adults', 'p-youth', 'p-seniors', 'p-children'].forEach(function (id) {
-      var el = $(id); if (el) el.addEventListener('input', recompute);
-    });
-    $('bk-ages').addEventListener('input', function () {});
-    $('f-dedicated').addEventListener('change', function () {
-      $('bk-upgrade').classList.toggle('is-on', this.checked);
-    });
-    wireTours();
-    recompute();
-
-    $('lst-book').addEventListener('submit', function (e) {
-      e.preventDefault();
-      e.stopImmediatePropagation();          // the site-wide handler must not also fire
-      var name = $('f-name').value.trim(), email = $('f-email').value.trim(), ok = true;
-      if (!name) { err('e-name', true); ok = false; } else err('e-name', false);
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err('e-email', true); ok = false; } else err('e-email', false);
-      if (!ok) return;
-
-      var btn = $('lst-book').querySelector('button[type="submit"]');
-      var orig = btn ? btn.textContent : '';
-      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-
-      var c = party();
-      var tickets = document.querySelector('input[name="tickets"]:checked');
-      var payload = {
-        business:       'lst',
-        enquiryType:    'tour',
-        fullName:       name,
-        email:          email,
-        date:           $('f-dates').value || null,
-        groupSize:      c.total || null,
-        adultsCount:    c.adults,
-        youthCount:     c.youth,
-        seniorsCount:   c.seniors,
-        infantsCount:   c.children,
-        childrenAges:   collectAges(),
-        phone:          $('f-phone').value || null,
-        hasWhatsApp:    $('f-whatsapp').checked,
-        tour:           chosen.join(', ') || null,
-        dedicatedGuide: $('f-dedicated').checked ? 1 : 0,
-        ticketsRequired: tickets && tickets.value === '1' ? 1 : 0,
-        stayingAt:      $('f-pickup').value || null,
-        additional:     $('f-message').value || null,
-      };
-
-      fetch('https://enquiries.lisbonsintratours.com/api/enquiry', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload),
-      }).then(function (r) {
-        if (!r.ok) throw new Error(r.status);
-        window.location.href = '/thank-you/';
-      }).catch(function () {
-        if (btn) { btn.disabled = false; btn.textContent = orig; }
-        alert('Sorry, something went wrong. Please email us directly at contact@lisbonsintratours.com');
-      });
-    });
-  }
-
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
+</form></div></section></main><footer class="bg-primary text-primary-foreground"><div class="container-page py-20 grid gap-12 md:grid-cols-4"><div class="md:col-span-2"><div class="eyebrow" style="color:var(--color-gold)">Lisbon Sintra Tours</div><h3 class="display text-3xl md:text-4xl mt-4 text-primary-foreground" style="color:var(--color-ivory)">Portugal, unhurried.</h3><p class="mt-6 max-w-md text-primary-foreground/70 leading-relaxed">Bespoke private tours and curated travel experiences across Lisbon, Sintra, and beyond — designed for travellers who prefer the road less travelled.</p></div><div><div class="eyebrow" style="color:var(--color-gold)">Explore</div><ul class="mt-5 space-y-3 text-sm text-primary-foreground/80"><li><a href="/tours/" class="hover:text-gold transition-colors">Tours</a></li><li><a href="/destinations/" class="hover:text-gold transition-colors">Destinations</a></li><li><a href="/about/" class="hover:text-gold transition-colors">About</a></li><li><a class="hover:text-gold transition-colors active" href="/contact/" aria-current="page">Contact</a></li></ul></div><div><div class="eyebrow" style="color:var(--color-gold)">Reach us</div><ul class="mt-5 space-y-3 text-sm text-primary-foreground/80"><li>Lisbon, Portugal</li><li><a href="mailto:contact@lisbonsintratours.com" class="hover:text-gold transition-colors">contact@lisbonsintratours.com</a></li></ul></div></div><div class="border-t border-primary-foreground/10"><div class="container-page py-6 flex flex-col md:flex-row gap-3 justify-between text-xs text-primary-foreground/50"><div>© 2026 Lisbon Sintra Tours. All rights reserved.</div><div class="tracking-[0.28em] uppercase">Crafted in Portugal</div><div><a href="https://incremento.co" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Design by Incremento</a></div></div></div></footer></div><script>function switchTourTab(t){document.getElementById('tour-group-single').style.display=t==='single'?'flex':'none';document.getElementById('tour-group-multi').style.display=t==='multi'?'flex':'none';document.getElementById('tab-single').classList.toggle('is-active',t==='single');document.getElementById('tab-multi').classList.toggle('is-active',t==='multi');}</script>
+<script>
+window.BK_T = {
+  locale: "en-GB",
+  thanks: "/thank-you/",
+  noGuests: "No guests yet",
+  guest: " guest",
+  guests: " guests",
+  adult: " adult",
+  senior: " senior",
+  youthLabel: "Youth",
+  childLabel: "Child",
+  agesWord: " ages",
+  youth617: " youth (6-17)",
+  plus65: " (65+)",
+  sumTours: "Tours",
+  sumDate: "Date",
+  sumGuests: "Guests",
+  sumGuide: "Guide",
+  sumGuideVal: "Dedicated guide, coming inside with you",
+  sumTickets: "Tickets",
+  sumTicketsVal: "Please buy them for us",
+  sending: "Sending\u2026",
+  failed: "Sorry, something went wrong. Please email us directly at contact@lisbonsintratours.com",
+  under6: " under 6",
+  adults: " adults",
+  seniors: " seniors",
+  youth: " youth",
+  steps: ['Your trip', 'How the day works', 'Your details']
+};
 </script>
+<script src="/js/lst-book.js" defer></script>
 <script src="/js/lst-v10.js" defer></script>
 </body></html>
