@@ -125,12 +125,12 @@ textarea.lst-input{resize:vertical}
       <span><b>Añadir un guía dedicado</b><p>Un segundo guía viaja con usted y entra en los palacios y monumentos, para tener siempre a alguien al lado. Requiere un conductor aparte, por lo que cuesta más.</p></span>
     </label>
     <div style="margin-top:1.5rem">
-      <label class="lst-field-label">¿Compramos sus entradas?</label>
-      <span class="lst-field-hint">Sintra se agota en temporada alta y las colas son largas. Podemos comprarlas por adelantado y añadirlas al presupuesto.</span>
-      <div class="bk-choices">
-        <label class="bk-choice"><input type="radio" name="tickets" value="0" checked><span>No, gracias, las compramos nosotros</span></label>
-        <label class="bk-choice"><input type="radio" name="tickets" value="1"><span>Sí, cómprenlas por favor</span></label>
-      </div>
+      <label class="lst-field-label">Entradas</label>
+      <span class="lst-field-hint">Sintra se agota en temporada alta y las colas son largas. Cómprelas directamente y mantiene la flexibilidad &mdash; le enviamos los enlaces correctos y le decimos cuándo reservar.</span>
+      <label style="display:inline-flex;align-items:flex-start;gap:10px;cursor:pointer;margin-top:12px">
+        <input type="checkbox" id="f-ticket-links" checked style="width:18px;height:18px;accent-color:var(--color-gold);cursor:pointer;flex-shrink:0;margin-top:2px">
+        <span style="font-size:0.9rem;color:oklch(0.28 0.03 170)">Sí, envíenme los enlaces de las entradas</span>
+      </label>
     </div>
     <div class="bk-nav">
       <button type="button" class="bk-back" onclick="bkGo(1)">Volver</button>
@@ -194,7 +194,7 @@ window.BK_T = {
   sumGuide: "Gu\u00eda",
   sumGuideVal: "Gu\u00eda dedicado, que entra con usted",
   sumTickets: "Entradas",
-  sumTicketsVal: "C\u00f3mprenlas por favor",
+  sumTicketsVal: "Env\u00edenme los enlaces",
   sending: "Enviando\u2026",
   failed: "Lo sentimos, algo ha fallado. Escr\u00edbanos directamente a contact@lisbonsintratours.com",
   under6: " de menos de 6 años",

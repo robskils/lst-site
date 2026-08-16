@@ -105,8 +105,7 @@ var T = window.BK_T || {};
     if (d) rows.push([T.sumDate, new Date(d + 'T12:00:00').toLocaleDateString(T.locale, { day:'numeric', month:'long', year:'numeric' })]);
     if (c.total) rows.push([T.sumGuests, c.total + ' — ' + bits.join(', ')]);
     if ($('f-dedicated').checked) rows.push([T.sumGuide, T.sumGuideVal]);
-    var t = document.querySelector('input[name="tickets"]:checked');
-    if (t && t.value === '1') rows.push([T.sumTickets, T.sumTicketsVal]);
+    if ($('f-ticket-links') && $('f-ticket-links').checked) rows.push([T.sumTickets, T.sumTicketsVal]);
     $('bk-summary').innerHTML = rows.map(function (r) {
       return '<div><span>' + r[0] + '</span><span>' + r[1].replace(/</g, '&lt;') + '</span></div>';
     }).join('');
@@ -150,7 +149,7 @@ var T = window.BK_T || {};
       if (btn) { btn.disabled = true; btn.textContent = T.sending; }
 
       var c = party();
-      var tickets = document.querySelector('input[name="tickets"]:checked');
+      var wantsLinks = $('f-ticket-links') ? $('f-ticket-links').checked : false;
       var payload = {
         business:       'lst',
         enquiryType:    'tour',
@@ -167,7 +166,12 @@ var T = window.BK_T || {};
         hasWhatsApp:    $('f-whatsapp').checked,
         tour:           chosen.join(', ') || null,
         dedicatedGuide: $('f-dedicated').checked ? 1 : 0,
-        ticketsRequired: tickets && tickets.value === '1' ? 1 : 0,
+        /* We no longer buy tickets for clients. Money collected for entry
+           tickets is our revenue and is taxed as though we kept it, which
+           cost more than the service was worth. We send the links instead:
+           the same help, none of the tax. */
+        ticketsRequired: 0,
+        ticketLinks: wantsLinks ? 1 : 0,
         stayingAt:      $('f-pickup').value || null,
         additional:     $('f-message').value || null,
       };

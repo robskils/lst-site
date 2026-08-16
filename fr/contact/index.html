@@ -125,12 +125,12 @@ textarea.lst-input{resize:vertical}
       <span><b>Ajouter un guide dédié</b><p>Un second guide vous accompagne et entre avec vous dans les palais et monuments, pour ne jamais vous laisser seuls. Cela demande un chauffeur séparé, et coûte donc davantage.</p></span>
     </label>
     <div style="margin-top:1.5rem">
-      <label class="lst-field-label">Souhaitez-vous que nous achetions vos billets&nbsp;?</label>
-      <span class="lst-field-hint">Sintra affiche complet en haute saison et les files sont longues. Nous pouvons les acheter à l&rsquo;avance et les ajouter au devis.</span>
-      <div class="bk-choices">
-        <label class="bk-choice"><input type="radio" name="tickets" value="0" checked><span>Non merci, nous les achèterons</span></label>
-        <label class="bk-choice"><input type="radio" name="tickets" value="1"><span>Oui, achetez-les pour nous</span></label>
-      </div>
+      <label class="lst-field-label">Billets d&rsquo;entrée</label>
+      <span class="lst-field-hint">Sintra affiche complet en haute saison et les files sont longues. Achetez-les directement et vous gardez la souplesse &mdash; nous vous enverrons les bons liens et vous dirons quand réserver.</span>
+      <label style="display:inline-flex;align-items:flex-start;gap:10px;cursor:pointer;margin-top:12px">
+        <input type="checkbox" id="f-ticket-links" checked style="width:18px;height:18px;accent-color:var(--color-gold);cursor:pointer;flex-shrink:0;margin-top:2px">
+        <span style="font-size:0.9rem;color:oklch(0.28 0.03 170)">Oui, envoyez-moi les liens des billets</span>
+      </label>
     </div>
     <div class="bk-nav">
       <button type="button" class="bk-back" onclick="bkGo(1)">Retour</button>
@@ -194,7 +194,7 @@ window.BK_T = {
   sumGuide: "Guide",
   sumGuideVal: "Guide d\u00e9di\u00e9, qui entre avec vous",
   sumTickets: "Billets",
-  sumTicketsVal: "Achetez-les pour nous",
+  sumTicketsVal: "Envoyez-moi les liens",
   sending: "Envoi\u2026",
   failed: "D\u00e9sol\u00e9, une erreur est survenue. \u00c9crivez-nous directement \u00e0 contact@lisbonsintratours.com",
   under6: " de moins de 6 ans",

@@ -125,12 +125,12 @@ textarea.lst-input{resize:vertical}
       <span><b>Add a dedicated guide</b><p>A second guide travels with you and comes inside the palaces and monuments, so there is someone with you throughout. This means a separate driver, so it costs more.</p></span>
     </label>
     <div style="margin-top:1.5rem">
-      <label class="lst-field-label">Shall we buy your entry tickets?</label>
-      <span class="lst-field-hint">Sintra sells out in high season and the queues at the gate are long. We can buy ahead and add them to your quote.</span>
-      <div class="bk-choices">
-        <label class="bk-choice"><input type="radio" name="tickets" value="0" checked><span>No thank you, we will buy our own</span></label>
-        <label class="bk-choice"><input type="radio" name="tickets" value="1"><span>Yes please, buy them for us</span></label>
-      </div>
+      <label class="lst-field-label">Entry tickets</label>
+      <span class="lst-field-hint">Sintra sells out in high season and the queues at the gate are long. Buy your own directly and you keep the flexibility &mdash; we will send you the exact links and tell you when to book.</span>
+      <label style="display:inline-flex;align-items:flex-start;gap:10px;cursor:pointer;margin-top:12px">
+        <input type="checkbox" id="f-ticket-links" checked style="width:18px;height:18px;accent-color:var(--color-gold);cursor:pointer;flex-shrink:0;margin-top:2px">
+        <span style="font-size:0.9rem;color:oklch(0.28 0.03 170)">Yes, send me the ticket links</span>
+      </label>
     </div>
     <div class="bk-nav">
       <button type="button" class="bk-back" onclick="bkGo(1)">Back</button>
@@ -194,7 +194,7 @@ window.BK_T = {
   sumGuide: "Guide",
   sumGuideVal: "Dedicated guide, coming inside with you",
   sumTickets: "Tickets",
-  sumTicketsVal: "Please buy them for us",
+  sumTicketsVal: "Send me the links",
   sending: "Sending\u2026",
   failed: "Sorry, something went wrong. Please email us directly at contact@lisbonsintratours.com",
   under6: " under 6",
