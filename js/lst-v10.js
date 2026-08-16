@@ -292,8 +292,10 @@
   }());
 
   // ── Contact form → Cloudflare Worker ────────────────────────────────────
+  // The contact page carries its own multi-step handler; this one would
+  // otherwise fire as well and post a half-empty payload alongside it.
   var form = document.querySelector('form');
-  if (form) {
+  if (form && !form.hasAttribute('data-multistep')) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var raw = Object.fromEntries(new FormData(form));
