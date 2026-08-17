@@ -8,6 +8,15 @@ textarea.lst-input{resize:vertical}
 .tour-type-toggle{display:inline-flex;background:oklch(0.92 0.008 85);border-radius:6px;padding:3px;gap:2px;margin-bottom:14px}
 .tour-type-tab{padding:0.3rem 1.1rem;font-size:0.72rem;letter-spacing:0.06em;font-family:var(--font-sans);color:oklch(0.52 0.015 85);background:none;border:none;border-radius:4px;cursor:pointer;transition:background 0.18s,color 0.18s,box-shadow 0.18s;line-height:1.5;font-weight:500}
 .tour-type-tab.is-active{background:#fff;color:oklch(0.22 0.03 170);box-shadow:0 1px 4px oklch(0.22 0.04 170 / 0.12)}
+
+/* Back to a single page. The three-step machinery stays in the markup so the
+   party breakdown and the age inputs are untouched — the steps simply all show
+   at once, and the Continue/Back buttons (the ones with an onclick) go away. */
+.bk-progress { display:none !important; }
+.bk-step { display:block !important; animation:none; }
+.bk-step + .bk-step { margin-top:2.25rem; padding-top:2.25rem; border-top:1px solid oklch(0.90 0.008 85); }
+.bk-nav button[onclick] { display:none !important; }
+.bk-nav { margin-top:1.5rem; }
 </style><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T9Z2G3GS1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-3T9Z2G3GS1");</script><script async defer src="https://app.visitortracking.com/assets/js/tracer.js"></script><script>function init_tracer(){new Tracer({websiteId:"96ad94ee-3304-4122-91a9-7b013c24c493",async:true,debug:false});}</script><meta property="og:image" content="https://lisbonsintratours.com/images/douro-valley.jpg"/><meta property="og:image:width" content="1600"/><meta property="og:image:height" content="900"/><meta property="og:url" content="https://lisbonsintratours.com/es/contact/"/><meta name="twitter:image" content="https://lisbonsintratours.com/images/douro-valley.jpg"/><link rel="alternate" hreflang="en" href="https://lisbonsintratours.com/contact/"/><link rel="alternate" hreflang="pt" href="https://lisbonsintratours.com/pt/contact/"/><link rel="alternate" hreflang="es" href="https://lisbonsintratours.com/es/contact/"/><link rel="alternate" hreflang="fr" href="https://lisbonsintratours.com/fr/contact/"/><link rel="alternate" hreflang="x-default" href="https://lisbonsintratours.com/contact/"/><style>
 /* ── Multi-step enquiry form ───────────────────────────────────────────── */
 .bk-progress { display:flex; align-items:center; gap:8px; margin-bottom:2rem; }

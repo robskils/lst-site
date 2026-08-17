@@ -79,6 +79,9 @@ var T = window.BK_T || {};
     return ok;
   }
 
+  // Kept because the markup still calls it from the old Continue buttons,
+  // which are now hidden. Harmless, and removing it would mean touching four
+  // pages of markup for no gain.
   window.bkGo = function (to) {
     if (to > step && !valid(step)) return;
     step = to;
@@ -135,14 +138,30 @@ var T = window.BK_T || {};
     });
     wireTours();
     recompute();
+    // No steps to move between, so the summary keeps itself current.
+    ['f-dates', 'f-dedicated', 'f-ticket-links'].forEach(function (id) {
+      var el = $(id); if (el) el.addEventListener('change', summary);
+    });
+    ['p-adults', 'p-youth', 'p-seniors', 'p-children'].forEach(function (id) {
+      var el = $(id); if (el) el.addEventListener('input', summary);
+    });
+    summary();
 
     $('lst-book').addEventListener('submit', function (e) {
       e.preventDefault();
       e.stopImmediatePropagation();          // the site-wide handler must not also fire
       var name = $('f-name').value.trim(), email = $('f-email').value.trim(), ok = true;
+      // Everything is on one page now, so everything is checked here.
+      if (!$('f-dates').value) { err('e-date', true); ok = false; } else err('e-date', false);
+      if (party().total < 1)   { err('e-party', true); ok = false; } else err('e-party', false);
+      if (!chosen.length)      { err('e-tour', true); ok = false; } else err('e-tour', false);
       if (!name) { err('e-name', true); ok = false; } else err('e-name', false);
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err('e-email', true); ok = false; } else err('e-email', false);
-      if (!ok) return;
+      if (!ok) {
+        var first = document.querySelector('.bk-err.is-on');
+        if (first) first.scrollIntoView({ behavior:'smooth', block:'center' });
+        return;
+      }
 
       var btn = $('lst-book').querySelector('button[type="submit"]');
       var orig = btn ? btn.textContent : '';
