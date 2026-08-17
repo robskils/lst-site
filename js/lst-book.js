@@ -97,6 +97,18 @@ var T = window.BK_T || {};
     if (f) window.scrollTo({ top: f.getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth' });
   };
 
+  // Say the chosen date back in words. The picker's own format follows the
+  // visitor's browser, so 02/10 reads as October in London and February in
+  // New York — this removes the doubt without overriding anything.
+  function echoDate() {
+    var el = $('date-said'), v = $('f-dates') ? $('f-dates').value : '';
+    if (!el) return;
+    if (!v) { el.textContent = ''; return; }
+    var d = new Date(v + 'T12:00:00');
+    el.textContent = isNaN(d) ? '' : d.toLocaleDateString(T.locale || 'en-GB',
+      { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
   function summary() {
     var c = party(), bits = [];
     if (c.adults)   bits.push(c.adults + (c.adults === 1 ? T.adult : T.adults));
@@ -124,6 +136,7 @@ var T = window.BK_T || {};
         $('tour-hidden').value = chosen.join(', ');
         if (chosen.length) err('e-tour', false);
         summary();
+    echoDate();
       });
     });
   }
@@ -322,7 +335,7 @@ var T = window.BK_T || {};
     recompute();
     // No steps to move between, so the summary keeps itself current.
     ['f-dates', 'f-dedicated'].forEach(function (id) {
-      var el = $(id); if (el) el.addEventListener('change', summary);
+      var el = $(id); if (el) el.addEventListener('change', function () { summary(); echoDate(); });
     });
     ['p-adults', 'p-youth', 'p-seniors', 'p-children'].forEach(function (id) {
       var el = $(id); if (el) el.addEventListener('input', summary);

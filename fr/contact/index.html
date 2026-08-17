@@ -12,6 +12,7 @@ textarea.lst-input{resize:vertical}
 /* Back to a single page. The three-step machinery stays in the markup so the
    party breakdown and the age inputs are untouched — the steps simply all show
    at once, and the Continue/Back buttons (the ones with an onclick) go away. */
+.bk-datesaid { margin-top:6px; font-size:0.88rem; color:var(--color-gold); min-height:1.2em; }
 .bk-progress { display:none !important; }
 .bk-step { display:block !important; animation:none; }
 .bk-step + .bk-step { margin-top:2.25rem; padding-top:2.25rem; border-top:1px solid oklch(0.90 0.008 85); }
@@ -92,6 +93,7 @@ textarea.lst-input{resize:vertical}
     <div>
       <label for="f-dates" class="lst-field-label">Date de l&rsquo;excursion <span style="color:var(--color-gold)">*</span></label>
       <input id="f-dates" type="date" name="dates" class="lst-input"/>
+      <div class="bk-datesaid" id="date-said"></div>
       <div class="bk-err" id="e-date">Merci de choisir une date.</div>
     </div>
 
