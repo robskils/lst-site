@@ -128,7 +128,183 @@ var T = window.BK_T || {};
     });
   }
 
+  /* ── THE DATE PICKER ──────────────────────────────────────────────────────
+     A native <input type="date"> starts its week on whichever day the visitor's
+     own browser locale says, so an American visitor sees a calendar beginning on
+     Sunday. Our weeks start on Monday, here as everywhere else, and that is not
+     something the native control can be told. So the field gets its own.
+
+     The original input stays in the page, hidden. Everything downstream reads
+     f-dates.value and listens for its change event, and none of it has to know
+     the calendar in front of it was replaced. Month and weekday names come from
+     the page's own locale, so pt, fr and es get their own words for free. */
+
+  function pad(v) { return (v < 10 ? '0' : '') + v; }
+  function ymd(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+
+  // Parsed at midday so a timezone west of UTC cannot roll the date back a day.
+  function parseYmd(s) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(s || '')) return null;
+    var d = new Date(s + 'T12:00:00');
+    return isNaN(d) ? null : d;
+  }
+
+  var DP_CSS = [
+    '.dp{position:relative}',
+    '.dp-field{width:100%;text-align:left;cursor:pointer;font:inherit}',
+    '.dp-field[data-empty="1"]{color:oklch(0.55 0.02 170)}',
+    '.dp-pop{position:absolute;z-index:60;top:calc(100% + 6px);left:0;width:322px;max-width:100%;',
+      'background:#fff;border:1px solid oklch(0.88 0.01 85);border-radius:6px;padding:14px;',
+      'box-shadow:0 12px 34px rgba(0,0,0,.14);display:none}',
+    '.dp-pop.is-on{display:block}',
+    '.dp-head{display:flex;align-items:center;gap:8px;margin-bottom:10px}',
+    '.dp-title{flex:1;text-align:center;font-family:var(--font-serif),Georgia,serif;font-size:1.05rem;',
+      'color:oklch(0.28 0.03 170);text-transform:capitalize}',
+    '.dp-nav{width:34px;height:34px;border:1px solid oklch(0.9 0.01 85);border-radius:4px;background:#fff;',
+      'cursor:pointer;font-size:1rem;line-height:1;color:oklch(0.4 0.02 170)}',
+    '.dp-nav:hover:not(:disabled){border-color:var(--color-gold,#b8932a);color:var(--color-gold,#b8932a)}',
+    '.dp-nav:disabled{opacity:.32;cursor:default}',
+    '.dp-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}',
+    '.dp-dow{text-align:center;font-size:0.68rem;letter-spacing:.08em;text-transform:uppercase;',
+      'color:oklch(0.55 0.02 170);padding:4px 0 6px}',
+    '.dp-dow.dp-we{color:var(--color-gold,#b8932a)}',
+    '.dp-day{height:40px;border:none;background:none;border-radius:4px;cursor:pointer;font:inherit;',
+      'font-size:0.92rem;color:oklch(0.28 0.03 170)}',
+    '.dp-day:hover:not(:disabled){background:oklch(0.95 0.01 85)}',
+    '.dp-day:disabled{color:oklch(0.82 0.01 170);cursor:default}',
+    '.dp-day.is-today{box-shadow:inset 0 0 0 1px var(--color-gold,#b8932a)}',
+    '.dp-day.is-on{background:oklch(0.28 0.03 170);color:#fff}',
+    '.dp-empty{height:40px}',
+    '@media (max-width:420px){.dp-pop{width:100%}.dp-day,.dp-empty{height:44px}}',
+  ].join('');
+
+  function buildPicker() {
+    var input = $('f-dates');
+    if (!input || input.getAttribute('data-dp') === '1') return;
+    input.setAttribute('data-dp', '1');
+
+    if (!document.getElementById('dp-css')) {
+      var st = document.createElement('style');
+      st.id = 'dp-css'; st.textContent = DP_CSS;
+      document.head.appendChild(st);
+    }
+
+    var loc = T.locale || document.documentElement.lang || 'en-GB';
+    var today = new Date(); today.setHours(12, 0, 0, 0);
+
+    var wrap = document.createElement('div');
+    wrap.className = 'dp';
+    input.parentNode.insertBefore(wrap, input);
+    input.style.display = 'none';
+    wrap.appendChild(input);
+
+    var field = document.createElement('button');
+    field.type = 'button';
+    field.className = 'lst-input dp-field';
+    field.setAttribute('aria-haspopup', 'dialog');
+    wrap.appendChild(field);
+
+    var pop = document.createElement('div');
+    pop.className = 'dp-pop';
+    pop.setAttribute('role', 'dialog');
+    wrap.appendChild(pop);
+
+    // Weekday initials taken off a known Monday, so the order is ours and the
+    // words are the visitor's.
+    var MONDAY = new Date(2024, 0, 1);   // a Monday
+    var dows = [];
+    for (var i = 0; i < 7; i++) {
+      var d = new Date(MONDAY); d.setDate(MONDAY.getDate() + i);
+      dows.push(d.toLocaleDateString(loc, { weekday: 'short' }));
+    }
+
+    var view = null;      // month on show
+    var picked = null;    // chosen day
+
+    function label() {
+      if (!picked) {
+        field.setAttribute('data-empty', '1');
+        field.textContent = T.datePick || 'Choose a date';
+        return;
+      }
+      field.removeAttribute('data-empty');
+      field.textContent = picked.toLocaleDateString(loc,
+        { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    function draw() {
+      var y = view.getFullYear(), m = view.getMonth();
+      var first = new Date(y, m, 1);
+      // Monday-first: JavaScript counts Sunday as 0, so shift the week round.
+      var lead = (first.getDay() + 6) % 7;
+      var days = new Date(y, m + 1, 0).getDate();
+      var atStart = y === today.getFullYear() && m === today.getMonth();
+
+      var html = '<div class="dp-head">'
+        + '<button type="button" class="dp-nav" data-go="-1" aria-label="Previous month"'
+        + (atStart ? ' disabled' : '') + '>&#8249;</button>'
+        + '<span class="dp-title">' + first.toLocaleDateString(loc, { month: 'long', year: 'numeric' }) + '</span>'
+        + '<button type="button" class="dp-nav" data-go="1" aria-label="Next month">&#8250;</button>'
+        + '</div><div class="dp-grid">';
+
+      for (var i = 0; i < 7; i++) {
+        html += '<div class="dp-dow' + (i > 4 ? ' dp-we' : '') + '">' + dows[i] + '</div>';
+      }
+      for (var b = 0; b < lead; b++) html += '<div class="dp-empty"></div>';
+      for (var day = 1; day <= days; day++) {
+        var cell = new Date(y, m, day, 12);
+        var past = cell < today;
+        var cls = 'dp-day';
+        if (ymd(cell) === ymd(today)) cls += ' is-today';
+        if (picked && ymd(cell) === ymd(picked)) cls += ' is-on';
+        html += '<button type="button" class="' + cls + '" data-d="' + ymd(cell) + '"'
+             + (past ? ' disabled' : '') + '>' + day + '</button>';
+      }
+      pop.innerHTML = html + '</div>';
+    }
+
+    function open() {
+      view = new Date(picked || today); view.setDate(1);
+      draw();
+      pop.classList.add('is-on');
+    }
+    function close() { pop.classList.remove('is-on'); }
+
+    field.addEventListener('click', function () {
+      if (pop.classList.contains('is-on')) close(); else open();
+    });
+
+    pop.addEventListener('click', function (e) {
+      var nav = e.target.closest ? e.target.closest('.dp-nav') : null;
+      if (nav) {
+        view.setMonth(view.getMonth() + parseInt(nav.getAttribute('data-go'), 10));
+        draw();
+        return;
+      }
+      var cell = e.target.closest ? e.target.closest('.dp-day') : null;
+      if (!cell || cell.disabled) return;
+      picked = parseYmd(cell.getAttribute('data-d'));
+      input.value = cell.getAttribute('data-d');
+      label();
+      close();
+      // The summary, the validation and the payload all hang off this event.
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') close();
+    });
+
+    // Honour anything already in the field, in case the browser restored it.
+    picked = parseYmd(input.value);
+    label();
+  }
+
   function init() {
+    buildPicker();
     ['p-adults', 'p-youth', 'p-seniors', 'p-children'].forEach(function (id) {
       var el = $(id); if (el) el.addEventListener('input', recompute);
     });
