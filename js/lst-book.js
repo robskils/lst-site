@@ -108,7 +108,6 @@ var T = window.BK_T || {};
     if (d) rows.push([T.sumDate, new Date(d + 'T12:00:00').toLocaleDateString(T.locale, { day:'numeric', month:'long', year:'numeric' })]);
     if (c.total) rows.push([T.sumGuests, c.total + ' — ' + bits.join(', ')]);
     if ($('f-dedicated').checked) rows.push([T.sumGuide, T.sumGuideVal]);
-    if ($('f-ticket-links') && $('f-ticket-links').checked) rows.push([T.sumTickets, T.sumTicketsVal]);
     $('bk-summary').innerHTML = rows.map(function (r) {
       return '<div><span>' + r[0] + '</span><span>' + r[1].replace(/</g, '&lt;') + '</span></div>';
     }).join('');
@@ -124,6 +123,7 @@ var T = window.BK_T || {};
         else { chosen.splice(at, 1); b.classList.remove('is-active'); }
         $('tour-hidden').value = chosen.join(', ');
         if (chosen.length) err('e-tour', false);
+        summary();
       });
     });
   }
@@ -139,7 +139,7 @@ var T = window.BK_T || {};
     wireTours();
     recompute();
     // No steps to move between, so the summary keeps itself current.
-    ['f-dates', 'f-dedicated', 'f-ticket-links'].forEach(function (id) {
+    ['f-dates', 'f-dedicated'].forEach(function (id) {
       var el = $(id); if (el) el.addEventListener('change', summary);
     });
     ['p-adults', 'p-youth', 'p-seniors', 'p-children'].forEach(function (id) {
@@ -168,7 +168,6 @@ var T = window.BK_T || {};
       if (btn) { btn.disabled = true; btn.textContent = T.sending; }
 
       var c = party();
-      var wantsLinks = $('f-ticket-links') ? $('f-ticket-links').checked : false;
       var payload = {
         business:       'lst',
         enquiryType:    'tour',
@@ -185,12 +184,11 @@ var T = window.BK_T || {};
         hasWhatsApp:    $('f-whatsapp').checked,
         tour:           chosen.join(', ') || null,
         dedicatedGuide: $('f-dedicated').checked ? 1 : 0,
-        /* We no longer buy tickets for clients. Money collected for entry
-           tickets is our revenue and is taxed as though we kept it, which
-           cost more than the service was worth. We send the links instead:
-           the same help, none of the tax. */
+        /* We never handle ticket money: collected for entry tickets it counts
+           as our revenue and is taxed as though we kept it. Clients buy their
+           own and we send them the links after they book, so the form does not
+           ask about it at all. */
         ticketsRequired: 0,
-        ticketLinks: wantsLinks ? 1 : 0,
         stayingAt:      $('f-pickup').value || null,
         additional:     $('f-message').value || null,
       };

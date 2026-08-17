@@ -97,7 +97,7 @@ textarea.lst-input{resize:vertical}
 
     <div style="margin-top:1.25rem">
       <label class="lst-field-label">¿Quiénes vienen? <span style="color:var(--color-gold)">*</span></label>
-      <span class="lst-field-hint">Las edades determinan el precio de las entradas y nos dicen qué sillitas debemos llevar.</span>
+      <span class="lst-field-hint">Las edades nos dicen qué sillitas debemos llevar.</span>
       <div class="bk-party">
         <div class="bk-prow"><span><b>Adultos</b><i>18&ndash;64</i></span><input type="number" min="0" max="60" value="0" id="p-adults"></div>
         <div class="bk-prow"><span><b>Jóvenes</b><i>6&ndash;17</i></span><input type="number" min="0" max="60" value="0" id="p-youth"></div>
@@ -133,14 +133,6 @@ textarea.lst-input{resize:vertical}
       <input type="checkbox" id="f-dedicated">
       <span><b>Añadir un guía dedicado</b><p>Un segundo guía viaja con usted y entra en los palacios y monumentos, para tener siempre a alguien al lado. Requiere un conductor aparte, por lo que cuesta más.</p></span>
     </label>
-    <div style="margin-top:1.5rem">
-      <label class="lst-field-label">Entradas</label>
-      <span class="lst-field-hint">Sintra se agota en temporada alta y las colas son largas. Cómprelas directamente y mantiene la flexibilidad &mdash; le enviamos los enlaces correctos y le decimos cuándo reservar.</span>
-      <label style="display:inline-flex;align-items:flex-start;gap:10px;cursor:pointer;margin-top:12px">
-        <input type="checkbox" id="f-ticket-links" checked style="width:18px;height:18px;accent-color:var(--color-gold);cursor:pointer;flex-shrink:0;margin-top:2px">
-        <span style="font-size:0.9rem;color:oklch(0.28 0.03 170)">Sí, envíenme los enlaces de las entradas</span>
-      </label>
-    </div>
     <div class="bk-nav">
       <button type="button" class="bk-back" onclick="bkGo(1)">Volver</button>
       <button type="button" class="btn-gold" onclick="bkGo(3)">Continuar</button>
@@ -202,8 +194,6 @@ window.BK_T = {
   sumGuests: "Personas",
   sumGuide: "Gu\u00eda",
   sumGuideVal: "Gu\u00eda dedicado, que entra con usted",
-  sumTickets: "Entradas",
-  sumTicketsVal: "Env\u00edenme los enlaces",
   sending: "Enviando\u2026",
   failed: "Lo sentimos, algo ha fallado. Escr\u00edbanos directamente a contact@lisbonsintratours.com",
   under6: " de menos de 6 años",

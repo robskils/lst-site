@@ -97,7 +97,7 @@ textarea.lst-input{resize:vertical}
 
     <div style="margin-top:1.25rem">
       <label class="lst-field-label">Qui vous accompagne&nbsp;? <span style="color:var(--color-gold)">*</span></label>
-      <span class="lst-field-hint">Les âges déterminent le prix des billets et nous indiquent les sièges enfant à prévoir.</span>
+      <span class="lst-field-hint">Les âges nous indiquent les sièges enfant à prévoir.</span>
       <div class="bk-party">
         <div class="bk-prow"><span><b>Adultes</b><i>18&ndash;64</i></span><input type="number" min="0" max="60" value="0" id="p-adults"></div>
         <div class="bk-prow"><span><b>Jeunes</b><i>6&ndash;17</i></span><input type="number" min="0" max="60" value="0" id="p-youth"></div>
@@ -133,14 +133,6 @@ textarea.lst-input{resize:vertical}
       <input type="checkbox" id="f-dedicated">
       <span><b>Ajouter un guide dédié</b><p>Un second guide vous accompagne et entre avec vous dans les palais et monuments, pour ne jamais vous laisser seuls. Cela demande un chauffeur séparé, et coûte donc davantage.</p></span>
     </label>
-    <div style="margin-top:1.5rem">
-      <label class="lst-field-label">Billets d&rsquo;entrée</label>
-      <span class="lst-field-hint">Sintra affiche complet en haute saison et les files sont longues. Achetez-les directement et vous gardez la souplesse &mdash; nous vous enverrons les bons liens et vous dirons quand réserver.</span>
-      <label style="display:inline-flex;align-items:flex-start;gap:10px;cursor:pointer;margin-top:12px">
-        <input type="checkbox" id="f-ticket-links" checked style="width:18px;height:18px;accent-color:var(--color-gold);cursor:pointer;flex-shrink:0;margin-top:2px">
-        <span style="font-size:0.9rem;color:oklch(0.28 0.03 170)">Oui, envoyez-moi les liens des billets</span>
-      </label>
-    </div>
     <div class="bk-nav">
       <button type="button" class="bk-back" onclick="bkGo(1)">Retour</button>
       <button type="button" class="btn-gold" onclick="bkGo(3)">Continuer</button>
@@ -202,8 +194,6 @@ window.BK_T = {
   sumGuests: "Personnes",
   sumGuide: "Guide",
   sumGuideVal: "Guide d\u00e9di\u00e9, qui entre avec vous",
-  sumTickets: "Billets",
-  sumTicketsVal: "Envoyez-moi les liens",
   sending: "Envoi\u2026",
   failed: "D\u00e9sol\u00e9, une erreur est survenue. \u00c9crivez-nous directement \u00e0 contact@lisbonsintratours.com",
   under6: " de moins de 6 ans",
