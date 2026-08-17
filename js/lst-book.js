@@ -159,7 +159,9 @@ var T = window.BK_T || {};
     '.dp-pop.is-on{display:block}',
     '.dp-head{display:flex;align-items:center;gap:8px;margin-bottom:10px}',
     '.dp-title{flex:1;text-align:center;font-family:var(--font-serif),Georgia,serif;font-size:1.05rem;',
-      'color:oklch(0.28 0.03 170);text-transform:capitalize}',
+      'color:oklch(0.28 0.03 170)}',
+    /* Only the first letter: capitalize would give "Agosto De 2026". */
+    '.dp-title::first-letter{text-transform:uppercase}',
     '.dp-nav{width:34px;height:34px;border:1px solid oklch(0.9 0.01 85);border-radius:4px;background:#fff;',
       'cursor:pointer;font-size:1rem;line-height:1;color:oklch(0.4 0.02 170)}',
     '.dp-nav:hover:not(:disabled){border-color:var(--color-gold,#b8932a);color:var(--color-gold,#b8932a)}',
@@ -215,7 +217,11 @@ var T = window.BK_T || {};
     var dows = [];
     for (var i = 0; i < 7; i++) {
       var d = new Date(MONDAY); d.setDate(MONDAY.getDate() + i);
-      dows.push(d.toLocaleDateString(loc, { weekday: 'short' }));
+      /* Trimmed to three letters: "short" is already Mon and lun, but in
+         Portuguese it is the whole word - segunda, terça - which will not fit a
+         seventh of the calendar. Three letters is the usual abbreviation there
+         anyway, and leaves the short locales untouched. */
+      dows.push(d.toLocaleDateString(loc, { weekday: 'short' }).replace(/\.$/, '').slice(0, 3));
     }
 
     var view = null;      // month on show
