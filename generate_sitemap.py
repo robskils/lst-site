@@ -12,14 +12,22 @@ def priority(path):
     if path in ("/pt/", "/pt/tours/", "/pt/destinations/", "/pt/contact/", "/pt/about/"): return "0.9"
     if path.startswith("/tours/") or path.startswith("/destinations/"): return "0.8"
     if path.startswith("/pt/tours/") or path.startswith("/pt/destinations/"): return "0.8"
-    if path == "/blog/": return "0.7"
-    if path == "/pt/blog/": return "0.7"
-    if path.startswith("/blog/") or path.startswith("/pt/blog/"): return "0.6"
+    # Spanish and French were left out of every rule below, so their tours,
+    # destinations and journal all came out at the default 0.5 while the same
+    # pages in English and Portuguese were 0.6 to 0.9. Four languages, one set
+    # of rules.
+    if path in ("/es/", "/es/tours/", "/es/destinations/", "/es/contact/", "/es/about/"): return "0.9"
+    if path in ("/fr/", "/fr/tours/", "/fr/destinations/", "/fr/contact/", "/fr/about/"): return "0.9"
+    if path.startswith("/es/tours/") or path.startswith("/es/destinations/"): return "0.8"
+    if path.startswith("/fr/tours/") or path.startswith("/fr/destinations/"): return "0.8"
+    if path in ("/blog/", "/pt/blog/", "/es/blog/", "/fr/blog/"): return "0.7"
+    if any(path.startswith(b) for b in ("/blog/", "/pt/blog/", "/es/blog/", "/fr/blog/")): return "0.6"
     return "0.5"
 
 def changefreq(path):
-    if path in ("/", "/tours/", "/destinations/", "/blog/", "/pt/", "/pt/tours/", "/pt/destinations/", "/pt/blog/"): return "weekly"
-    if path.startswith("/blog/") or path.startswith("/pt/blog/"): return "monthly"
+    weekly = ("/", "/tours/", "/destinations/", "/blog/")
+    if path in weekly or any(path == "/" + l + w for l in ("pt", "es", "fr") for w in weekly): return "weekly"
+    if any(path.startswith(b) for b in ("/blog/", "/pt/blog/", "/es/blog/", "/fr/blog/")): return "monthly"
     return "monthly"
 
 # Collect all pages
