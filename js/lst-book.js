@@ -9,7 +9,6 @@ var T = window.BK_T || {};
    This registers before /js/lst-v10.js (which is deferred) and the form is
    marked data-multistep, so the site-wide single-page handler stands down. */
 (function () {
-  var DEDICATED_MAX = 8;   // above this the guide is not driving anyway
   var step = 1, chosen = [];
 
   function $(id) { return document.getElementById(id); }
@@ -54,14 +53,10 @@ var T = window.BK_T || {};
     if (c.total) err('e-party', false);
 
     // The guide note is only true for a small group, so only show it then.
-    /* The dedicated-guide upgrade has come off the form. It was the only place
-       that mentioned a second driver, and explaining a paid upgrade in a
-       checkbox on a form nobody has spoken to yet asked the client to price
-       something they did not understand. Vitor covers it in his first reply
-       instead, where there is somebody to ask. */
-    var small = c.total > 0 && c.total <= DEDICATED_MAX;
-    var note = $('bk-guide-note');
-    if (note) note.style.display = small ? '' : 'none';
+    /* The guide-and-driver note and the dedicated-guide upgrade have both come
+       off the form. Explaining the arrangement to somebody who has not spoken
+       to anybody yet, in a box on a form, asked them to weigh something they
+       had no way to ask about. Vitor covers it in his first reply. */
   }
 
   function collectAges() {
@@ -89,13 +84,20 @@ var T = window.BK_T || {};
   window.bkGo = function (to) {
     if (to > step && !valid(step)) return;
     step = to;
+    /* Step 2 has gone: it held the guide-and-driver note and the dedicated
+       guide upgrade, and with both moved into Vitor's first reply there was
+       nothing left in it but a rule and a gap. Nothing here may assume a step
+       or a dot is on the page. */
     [1, 2, 3].forEach(function (i) {
-      $('bk-s' + i).classList.toggle('is-on', i === to);
+      var el = $('bk-s' + i);
+      if (el) el.classList.toggle('is-on', i === to);
       var d = $('bk-d' + i);
+      if (!d) return;
       d.classList.toggle('is-on', i === to);
       d.classList.toggle('is-done', i < to);
     });
-    $('bk-stepname').textContent = T.steps[to - 1];
+    var name = $('bk-stepname');
+    if (name) name.textContent = T.steps[to - 1] || '';
     if (to === 3) summary();
     var f = $('lst-book');
     if (f) window.scrollTo({ top: f.getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth' });
@@ -338,7 +340,21 @@ var T = window.BK_T || {};
       var el = $(id); if (el) el.addEventListener('change', function () { summary(); echoDate(); });
     });
     ['p-adults', 'p-youth', 'p-seniors', 'p-children'].forEach(function (id) {
-      var el = $(id); if (el) el.addEventListener('input', summary);
+      var el = $(id); if (!el) return;
+      el.addEventListener('input', summary);
+
+      /* The 0 is a placeholder, and a placeholder stays put until you type -
+         so clicking into the box left a cursor blinking beside a nought. It is
+         taken away while the box has focus and put back when you leave, and a
+         0 somebody typed is cleared too, so typing 2 gives 2 and not 02. */
+      el.addEventListener('focus', function () {
+        this.dataset.ph = this.dataset.ph || this.getAttribute('placeholder') || '';
+        this.setAttribute('placeholder', '');
+        if (this.value === '0') { this.value = ''; recompute(); summary(); }
+      });
+      el.addEventListener('blur', function () {
+        if (this.dataset.ph !== undefined) this.setAttribute('placeholder', this.dataset.ph);
+      });
     });
     summary();
 
