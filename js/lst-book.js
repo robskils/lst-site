@@ -54,10 +54,14 @@ var T = window.BK_T || {};
     if (c.total) err('e-party', false);
 
     // The guide note is only true for a small group, so only show it then.
+    /* The dedicated-guide upgrade has come off the form. It was the only place
+       that mentioned a second driver, and explaining a paid upgrade in a
+       checkbox on a form nobody has spoken to yet asked the client to price
+       something they did not understand. Vitor covers it in his first reply
+       instead, where there is somebody to ask. */
     var small = c.total > 0 && c.total <= DEDICATED_MAX;
-    $('bk-guide-note').style.display = small ? '' : 'none';
-    $('bk-upgrade').style.display    = small ? '' : 'none';
-    if (!small && $('f-dedicated').checked) { $('f-dedicated').checked = false; $('bk-upgrade').classList.remove('is-on'); }
+    var note = $('bk-guide-note');
+    if (note) note.style.display = small ? '' : 'none';
   }
 
   function collectAges() {
@@ -119,7 +123,6 @@ var T = window.BK_T || {};
     if (chosen.length) rows.push([T.sumTours, chosen.join(', ')]);
     if (d) rows.push([T.sumDate, new Date(d + 'T12:00:00').toLocaleDateString(T.locale, { day:'numeric', month:'long', year:'numeric' })]);
     if (c.total) rows.push([T.sumGuests, c.total + ' — ' + bits.join(', ')]);
-    if ($('f-dedicated').checked) rows.push([T.sumGuide, T.sumGuideVal]);
     $('bk-summary').innerHTML = rows.map(function (r) {
       return '<div><span>' + r[0] + '</span><span>' + r[1].replace(/</g, '&lt;') + '</span></div>';
     }).join('');
@@ -328,13 +331,10 @@ var T = window.BK_T || {};
       var el = $(id); if (el) el.addEventListener('input', recompute);
     });
     $('bk-ages').addEventListener('input', function () {});
-    $('f-dedicated').addEventListener('change', function () {
-      $('bk-upgrade').classList.toggle('is-on', this.checked);
-    });
     wireTours();
     recompute();
     // No steps to move between, so the summary keeps itself current.
-    ['f-dates', 'f-dedicated'].forEach(function (id) {
+    ['f-dates'].forEach(function (id) {
       var el = $(id); if (el) el.addEventListener('change', function () { summary(); echoDate(); });
     });
     ['p-adults', 'p-youth', 'p-seniors', 'p-children'].forEach(function (id) {
@@ -378,7 +378,6 @@ var T = window.BK_T || {};
         phone:          $('f-phone').value || null,
         hasWhatsApp:    $('f-whatsapp').checked,
         tour:           chosen.join(', ') || null,
-        dedicatedGuide: $('f-dedicated').checked ? 1 : 0,
         /* We never handle ticket money: collected for entry tickets it counts
            as our revenue and is taxed as though we kept it. Clients buy their
            own and we send them the links after they book, so the form does not
