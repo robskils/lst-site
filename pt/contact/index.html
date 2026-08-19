@@ -18,6 +18,13 @@ textarea.lst-input{resize:vertical}
 .bk-step + .bk-step { margin-top:2.25rem; padding-top:2.25rem; border-top:1px solid oklch(0.90 0.008 85); }
 .bk-nav button[onclick] { display:none !important; }
 .bk-nav { margin-top:1.5rem; }
+
+.bk-extras { margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid oklch(0.90 0.008 85); }
+.bk-extras-h { font-size:0.95rem; margin-bottom:0.75rem; color:oklch(0.35 0.02 170); }
+.bk-extra { display:flex; align-items:flex-start; gap:0.7rem; padding:0.6rem 0; cursor:pointer; }
+.bk-extra input { margin-top:0.25rem; width:1.05rem; height:1.05rem; accent-color:var(--color-gold); flex:none; }
+.bk-extra b { display:block; font-weight:500; }
+.bk-extra i { display:block; font-style:normal; font-size:0.87rem; color:oklch(0.55 0.02 170); margin-top:0.1rem; }
 </style><script async src="https://www.googletagmanager.com/gtag/js?id=G-3T9Z2G3GS1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-3T9Z2G3GS1");</script><script async defer src="https://app.visitortracking.com/assets/js/tracer.js"></script><script>function init_tracer(){new Tracer({websiteId:"96ad94ee-3304-4122-91a9-7b013c24c493",async:true,debug:false});}</script><meta property="og:image" content="https://lisbonsintratours.com/images/douro-valley.jpg"/><meta property="og:image:width" content="1600"/><meta property="og:image:height" content="900"/><meta property="og:url" content="https://lisbonsintratours.com/pt/contact/"/><meta name="twitter:image" content="https://lisbonsintratours.com/images/douro-valley.jpg"/><link rel="alternate" hreflang="en" href="https://lisbonsintratours.com/contact/"/><link rel="alternate" hreflang="pt" href="https://lisbonsintratours.com/pt/contact/"/><link rel="alternate" <link rel="alternate" hreflang="es" href="https://lisbonsintratours.com/es/contact/"/><link rel="alternate" hreflang="fr" href="https://lisbonsintratours.com/fr/contact/"/><link rel="alternate" hreflang="x-default" href="https://lisbonsintratours.com/contact/"/><style>
 /* ── Multi-step enquiry form ───────────────────────────────────────────── */
 .bk-progress { display:flex; align-items:center; gap:8px; margin-bottom:2rem; }
@@ -107,6 +114,8 @@ textarea.lst-input{resize:vertical}
         <div class="bk-prow"><span><b>Crianças</b><i>menos de 6 anos</i></span><input type="number" min="0" max="20" placeholder="0" id="p-children"></div>
       </div>
       <div id="bk-ages"></div>
+      <div class="bk-extras" id="bk-extras"><div class="bk-extras-h">Quer acrescentar alguma coisa?</div><label class="bk-extra"><input type="checkbox" data-extra="cruise"><span><b>Cruzeiro ao pôr do sol</b><i>Um fim de tarde no rio</i></span></label><label class="bk-extra"><input type="checkbox" data-extra="winery"><span><b>Visita a uma quinta</b><i>Uma prova, normalmente na tarde de um dia em Sintra</i></span></label><label class="bk-extra"><input type="checkbox" data-extra="photographer"><span><b>Fotógrafo</b><i>Alguém para fotografar o dia</i></span></label></div>
+      
       <div class="bk-total" id="bk-total"></div>
       <div class="bk-err" id="e-party">Diga-nos quem vem, por favor.</div>
     </div>
@@ -192,6 +201,6 @@ window.BK_T = {
   steps: ['A sua viagem', 'Como funciona o dia', 'Os seus dados']
 };
 </script>
-<script src="/js/lst-book.js?v=4" defer></script>
+<script src="/js/lst-book.js?v=5" defer></script>
 <script src="/js/lst-v10.js" defer></script>
 </body></html>

@@ -125,12 +125,27 @@ var T = window.BK_T || {};
     if (chosen.length) rows.push([T.sumTours, chosen.join(', ')]);
     if (d) rows.push([T.sumDate, new Date(d + 'T12:00:00').toLocaleDateString(T.locale, { day:'numeric', month:'long', year:'numeric' })]);
     if (c.total) rows.push([T.sumGuests, c.total + ' — ' + bits.join(', ')]);
+    var ex = [];
+    document.querySelectorAll('[data-extra]').forEach(function (b) {
+      if (b.checked) ex.push(b.parentNode.querySelector('b').textContent);
+    });
+    if (ex.length) rows.push([T.sumExtras || 'Also', ex.join(', ')]);
     $('bk-summary').innerHTML = rows.map(function (r) {
       return '<div><span>' + r[0] + '</span><span>' + r[1].replace(/</g, '&lt;') + '</span></div>';
     }).join('');
   }
 
   // Tours are multi-select: people rarely want exactly one.
+  /* Which add-ons are ticked. */
+  function chosenExtras() {
+    var out = [];
+    var boxes = document.querySelectorAll('[data-extra]');
+    for (var i = 0; i < boxes.length; i++) {
+      if (boxes[i].checked) out.push(boxes[i].getAttribute('data-extra'));
+    }
+    return out;
+  }
+
   function wireTours() {
     [].forEach.call(document.querySelectorAll('.tour-pill-btn'), function (b) {
       b.addEventListener('click', function () {
@@ -329,6 +344,11 @@ var T = window.BK_T || {};
 
   function init() {
     buildPicker();
+    // Ticking one changes the summary, so it has to redraw.
+    document.querySelectorAll('[data-extra]').forEach(function (b) {
+      b.addEventListener('change', function () { summary(); });
+    });
+
     ['p-adults', 'p-youth', 'p-seniors', 'p-children'].forEach(function (id) {
       var el = $(id); if (el) el.addEventListener('input', recompute);
     });
@@ -390,6 +410,9 @@ var T = window.BK_T || {};
         youthCount:     c.youth,
         seniorsCount:   c.seniors,
         infantsCount:   c.children,
+        /* Add-ons, ticked on the form. Sent by key rather than by label so the
+           four language versions all arrive as the same three words. */
+        extras:         chosenExtras(),
         childrenAges:   collectAges(),
         phone:          $('f-phone').value || null,
         hasWhatsApp:    $('f-whatsapp').checked,
