@@ -1,0 +1,24 @@
+# Portuguese pages get Portuguese slugs. The old English ones are kept
+# alive as 301s so the indexed URLs keep whatever ranking they hold.
+
+/pt/blog/getting-around-in-style/  /pt/blog/viagem-privada-de-luxo-em-portugal/  301
+/pt/blog/have-you-discovered-braga/  /pt/blog/visitar-braga/  301
+/pt/blog/how-to-get-from-lisbon-to-sintra/  /pt/blog/como-ir-de-lisboa-a-sintra/  301
+/pt/blog/how-to-plan-a-stress-free-senior-friendly-trip-to-portugal/  /pt/blog/viagem-a-portugal-para-seniores/  301
+/pt/blog/lisbon-tops-the-happiest-city-index/  /pt/blog/lisboa-cidade-mais-feliz/  301
+/pt/blog/lisbons-alternative-neighbourhoods/  /pt/blog/bairros-alternativos-de-lisboa/  301
+/pt/blog/lisbons-hidden-gems/  /pt/blog/joias-escondidas-de-lisboa/  301
+/pt/blog/lisbons-luxury-private-events/  /pt/blog/eventos-privados-de-luxo-em-lisboa/  301
+/pt/blog/one-day-in-sintra/  /pt/blog/um-dia-em-sintra/  301
+/pt/blog/the-best-day-trips-from-lisbon/  /pt/blog/passeios-de-um-dia-a-partir-de-lisboa/  301
+/pt/blog/the-best-hotels-in-lisbon/  /pt/blog/melhores-hoteis-em-lisboa/  301
+/pt/blog/the-best-hotels-in-sintra/  /pt/blog/melhores-hoteis-em-sintra/  301
+/pt/blog/the-best-restaurants-in-sintra/  /pt/blog/melhores-restaurantes-em-sintra/  301
+/pt/blog/the-best-restaurants-in-sintra-with-a-view/  /pt/blog/melhores-restaurantes-em-sintra-com-vista/  301
+/pt/blog/the-top-tourist-attractions-in-portugal/  /pt/blog/principais-atracoes-turisticas-de-portugal/  301
+/pt/blog/things-to-do-in-sintra/  /pt/blog/o-que-fazer-em-sintra/  301
+/pt/blog/web-summit-2022/  /pt/blog/web-summit-lisboa/  301
+/pt/blog/why-portugal-is-the-ideal-destination-for-history-loving-seniors/  /pt/blog/portugal-para-seniores-amantes-da-historia/  301
+/pt/blog/why-visit-cascais/  /pt/blog/visitar-cascais/  301
+/pt/blog/wine-tourism-in-portugal/  /pt/blog/turismo-vinico-em-portugal/  301
+/pt/blog/winter-tours-to-sintra/  /pt/blog/passeios-de-inverno-a-sintra/  301
