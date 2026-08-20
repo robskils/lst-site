@@ -9,17 +9,17 @@ DST = os.path.dirname(os.path.abspath(__file__))
 def priority(path):
     if path == "/": return "1.0"
     if path in ("/tours/", "/destinations/", "/contact/", "/about/"): return "0.9"
-    if path in ("/pt/", "/pt/tours/", "/pt/destinations/", "/pt/contact/", "/pt/about/"): return "0.9"
+    if path in ("/pt/", "/pt/passeios/", "/pt/destinos/", "/pt/contacto/", "/pt/sobre-nos/"): return "0.9"
     if path.startswith("/tours/") or path.startswith("/destinations/"): return "0.8"
-    if path.startswith("/pt/tours/") or path.startswith("/pt/destinations/"): return "0.8"
+    if path.startswith("/pt/passeios/") or path.startswith("/pt/destinos/"): return "0.8"
     # Spanish and French were left out of every rule below, so their tours,
     # destinations and journal all came out at the default 0.5 while the same
     # pages in English and Portuguese were 0.6 to 0.9. Four languages, one set
     # of rules.
-    if path in ("/es/", "/es/tours/", "/es/destinations/", "/es/contact/", "/es/about/"): return "0.9"
-    if path in ("/fr/", "/fr/tours/", "/fr/destinations/", "/fr/contact/", "/fr/about/"): return "0.9"
-    if path.startswith("/es/tours/") or path.startswith("/es/destinations/"): return "0.8"
-    if path.startswith("/fr/tours/") or path.startswith("/fr/destinations/"): return "0.8"
+    if path in ("/es/", "/es/tours/", "/es/destinos/", "/es/contacto/", "/es/sobre-nosotros/"): return "0.9"
+    if path in ("/fr/", "/fr/excursions/", "/fr/destinations/", "/fr/contact/", "/fr/a-propos/"): return "0.9"
+    if path.startswith("/es/tours/") or path.startswith("/es/destinos/"): return "0.8"
+    if path.startswith("/fr/excursions/") or path.startswith("/fr/destinations/"): return "0.8"
     if path in ("/blog/", "/pt/blog/", "/es/blog/", "/fr/blog/"): return "0.7"
     if any(path.startswith(b) for b in ("/blog/", "/pt/blog/", "/es/blog/", "/fr/blog/")): return "0.6"
     return "0.5"

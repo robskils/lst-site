@@ -295,12 +295,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/about/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://lisbonsintratours.com/es/blog/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -457,187 +451,193 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/car-service/</loc>
+    <loc>https://lisbonsintratours.com/es/catas-de-vino-en-lisboa/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/car-tours-from-lisbon-to-sintra/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/es/contact/</loc>
+    <loc>https://lisbonsintratours.com/es/contacto/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/</loc>
     <lastmod>2026-08-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/algarve/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/algarve/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/arrabida/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/arrabida/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/cabo-da-roca/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/cabo-da-roca/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/coimbra/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/coimbra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/evora/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/evora/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/fatima/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/fatima/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/jeronimos-monastery/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/jeronimos-monastery/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/lisbon/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/lisbon/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/nazare/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/nazare/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/obidos/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/obidos/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/porto/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/porto/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/romanticism-in-portugal/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/romanticism-in-portugal/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/the-castles-and-palaces-of-sintra/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/the-castles-and-palaces-of-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/the-portuguese-riviera/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/the-portuguese-riviera/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/tomar-and-the-knights-templar/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/tomar-and-the-knights-templar/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/destinations/tomar/</loc>
+    <loc>https://lisbonsintratours.com/es/destinos/tomar/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/lisbon-art-tours/</loc>
+    <loc>https://lisbonsintratours.com/es/fiestas-y-eventos-en-lisboa/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/lisbon-festivals-and-events/</loc>
+    <loc>https://lisbonsintratours.com/es/gracias/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/lisbon-wine-tours/</loc>
+    <loc>https://lisbonsintratours.com/es/politica-de-privacidad/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/luxury-private-transport/</loc>
+    <loc>https://lisbonsintratours.com/es/servicio-de-coche-privado/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/next-day-and-same-day-sintra-tours/</loc>
+    <loc>https://lisbonsintratours.com/es/servicios-de-transporte/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/one-day-tours-from-lisbon/</loc>
+    <loc>https://lisbonsintratours.com/es/sobre-nosotros/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/es/tours-a-sintra-el-mismo-dia/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/privacy-policy/</loc>
+    <loc>https://lisbonsintratours.com/es/tours-de-arte-en-lisboa/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/private-group-tours-portugal/</loc>
+    <loc>https://lisbonsintratours.com/es/tours-de-un-dia-desde-lisboa/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/private-tours-sintra/</loc>
+    <loc>https://lisbonsintratours.com/es/tours-en-coche-de-lisboa-a-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/sintra-tours/</loc>
+    <loc>https://lisbonsintratours.com/es/tours-en-grupo-privado-portugal/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/thank-you/</loc>
+    <loc>https://lisbonsintratours.com/es/tours-en-sintra/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/es/tours-privados-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -721,7 +721,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/es/transport-services/</loc>
+    <loc>https://lisbonsintratours.com/es/transporte-privado-de-lujo/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -733,7 +733,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/about/</loc>
+    <loc>https://lisbonsintratours.com/fr/a-propos/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -895,13 +895,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/car-service/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/fr/car-tours-from-lisbon-to-sintra/</loc>
+    <loc>https://lisbonsintratours.com/fr/circuits-une-journee-depuis-lisbonne/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -911,6 +905,12 @@
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/degustations-de-vin-a-lisbonne/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lisbonsintratours.com/fr/destinations/</loc>
@@ -1015,151 +1015,151 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/lisbon-art-tours/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions-a-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/lisbon-festivals-and-events/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions-en-voiture-lisbonne-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/lisbon-wine-tours/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions-groupe-prive-portugal/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/luxury-private-transport/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions-privees-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/next-day-and-same-day-sintra-tours/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions-sintra-jour-meme/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/one-day-tours-from-lisbon/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/fr/privacy-policy/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/fr/private-group-tours-portugal/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/fr/private-tours-sintra/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/fr/sintra-tours/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/fr/thank-you/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/fr/tours/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/evora-and-alentejo/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/evora-and-alentejo/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/fatima-central-portugal/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/fatima-central-portugal/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/lisbon-and-belem/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/lisbon-and-belem/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/lisbon-sunset-cruise/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/lisbon-sunset-cruise/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/porto-and-aveiro/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/porto-and-aveiro/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/porto-city/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/porto-city/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/portuguese-riviera/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/portuguese-riviera/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/relaxing-algarve/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/relaxing-algarve/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/relaxing-portugal/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/relaxing-portugal/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/romanticist-sintra/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/romanticist-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/royal-sintra/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/royal-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/tours/templar-portugal/</loc>
+    <loc>https://lisbonsintratours.com/fr/excursions/templar-portugal/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/fr/transport-services/</loc>
+    <loc>https://lisbonsintratours.com/fr/fetes-et-evenements-a-lisbonne/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/merci/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/politique-de-confidentialite/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/service-de-voiture-privee/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/services-de-transport/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/transport-prive-de-luxe/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/fr/visites-art-lisbonne/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -1222,12 +1222,6 @@
     <loc>https://lisbonsintratours.com/pt/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/pt/about/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
@@ -1387,271 +1381,277 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/car-service/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/pt/car-tours-from-lisbon-to-sintra/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/pt/contact/</loc>
+    <loc>https://lisbonsintratours.com/pt/contacto/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/</loc>
     <lastmod>2026-08-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/algarve/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/algarve/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/arrabida/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/arrabida/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/cabo-da-roca/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/cabo-da-roca/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/coimbra/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/coimbra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/evora/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/evora/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/fatima/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/fatima/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/jeronimos-monastery/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/jeronimos-monastery/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/lisbon/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/lisbon/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/nazare/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/nazare/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/obidos/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/obidos/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/porto/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/porto/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/romanticism-in-portugal/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/romanticism-in-portugal/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/the-castles-and-palaces-of-sintra/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/the-castles-and-palaces-of-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/the-portuguese-riviera/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/the-portuguese-riviera/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/tomar-and-the-knights-templar/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/tomar-and-the-knights-templar/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/destinations/tomar/</loc>
+    <loc>https://lisbonsintratours.com/pt/destinos/tomar/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/lisbon-art-tours/</loc>
+    <loc>https://lisbonsintratours.com/pt/festivais-e-eventos-em-lisboa/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/lisbon-festivals-and-events/</loc>
+    <loc>https://lisbonsintratours.com/pt/obrigado/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/lisbon-wine-tours/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios-a-sintra-no-proprio-dia/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/luxury-private-transport/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios-de-arte-em-lisboa/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/next-day-and-same-day-sintra-tours/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios-de-carro-lisboa-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/one-day-tours-from-lisbon/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios-de-um-dia-de-lisboa/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/privacy-policy/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios-em-grupo-privado-portugal/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/private-group-tours-portugal/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios-em-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/private-tours-sintra/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios-privados-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/sintra-tours/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/pt/thank-you/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://lisbonsintratours.com/pt/tours/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/evora-and-alentejo/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/evora-and-alentejo/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/fatima-central-portugal/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/fatima-central-portugal/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/lisbon-and-belem/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/lisbon-and-belem/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/lisbon-sunset-cruise/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/lisbon-sunset-cruise/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/porto-and-aveiro/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/porto-and-aveiro/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/porto-city/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/porto-city/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/portuguese-riviera/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/portuguese-riviera/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/relaxing-algarve/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/relaxing-algarve/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/relaxing-portugal/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/relaxing-portugal/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/romanticist-sintra/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/romanticist-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/royal-sintra/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/royal-sintra/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/tours/templar-portugal/</loc>
+    <loc>https://lisbonsintratours.com/pt/passeios/templar-portugal/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lisbonsintratours.com/pt/transport-services/</loc>
+    <loc>https://lisbonsintratours.com/pt/politica-de-privacidade/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/pt/provas-de-vinho-em-lisboa/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/pt/servico-de-automovel-privado/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/pt/servicos-de-transporte/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/pt/sobre-nos/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lisbonsintratours.com/pt/transporte-privado-de-luxo/</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
