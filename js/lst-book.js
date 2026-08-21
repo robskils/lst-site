@@ -316,6 +316,17 @@ var T = window.BK_T || {};
     pop.addEventListener('click', function (e) {
       var nav = e.target.closest ? e.target.closest('.dp-nav') : null;
       if (nav) {
+        /* Stop here. draw() replaces the whole of pop.innerHTML, so by the time
+           this click reaches the document listener below, the arrow that was
+           pressed has been thrown away and replaced. A detached node is not
+           inside anything, wrap.contains() says false, and the calendar decided
+           the click had landed outside itself and shut.
+
+           So: press next, watch it move to September, watch it close. Which
+           read as "you cannot look past August", and was really "you cannot
+           change month at all" - the first press was simply always the one that
+           left August. */
+        e.stopPropagation();
         view.setMonth(view.getMonth() + parseInt(nav.getAttribute('data-go'), 10));
         draw();
         return;
@@ -331,6 +342,11 @@ var T = window.BK_T || {};
     });
 
     document.addEventListener('click', function (e) {
+      /* Belt as well as braces. Anything this calendar redraws in response to a
+         click leaves its target detached, and a detached target is not evidence
+         of a click outside - it is evidence of a click on something we have
+         just rebuilt. Never close on one. */
+      if (e.target && e.target.isConnected === false) return;
       if (!wrap.contains(e.target)) close();
     });
     document.addEventListener('keydown', function (e) {
