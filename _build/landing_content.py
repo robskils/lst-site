@@ -26,7 +26,13 @@ PAGES = [
                   "vehicle a private day becomes a different exercise - and there is a "
                   "constraint at the top of the hill in Sintra that almost nobody "
                   "mentions until it is too late to change it."),
-        "hero": "/images/sintra-pena-palace.jpg",
+        # Two coaches at Belem Tower - our transport partner's, used with their
+# permission. It is the page in one picture: the right city, the right
+# vehicles, and two of them, which is the whole "a guide in every
+# vehicle" argument before a word is read.
+        "hero": "/images/coaches-belem.jpg",
+        "hero_alt": "Two coaches parked in front of Bel\u00e9m Tower in Lisbon",
+        "hero_pos": "center 76%",
         "cta": "Tell us the number and the date.",
         "cta_sub": ("Those two facts decide almost everything else. We will come back with "
                     "the vehicles, the guides and a price - not a brochure."),

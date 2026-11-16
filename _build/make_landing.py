@@ -247,7 +247,18 @@ def build(skeleton, page):
         '<main class="flex-1">'
         '<section class="relative h-[68vh] min-h-[480px] w-full overflow-hidden">'
         '<div class="absolute inset-0">'
-        f'<img src="{page["hero"]}" alt="" class="absolute inset-0 h-full w-full object-cover ken-burns"/>'
+        # object-position, because object-cover centres the crop and the
+        # subject of a photograph is rarely in the middle of it: centred, the
+        # coaches at Belem fell out of the bottom of the frame and the hero
+        # was a picture of a tower.
+        f'<img src="{page["hero"]}" alt="{esc(page.get("hero_alt", ""))}" '
+        # ken-burns is the site's signature drift on a scenic hero, and it is
+        # wrong on one with a subject: the slow zoom walked the coaches out of
+        # the bottom of the frame a few seconds after the page loaded. A photo
+        # that is ABOUT something holds still.
+        f'class="absolute inset-0 h-full w-full object-cover'
+        f'{"" if page.get("hero_pos") else " ken-burns"}"'
+        f'{" style=" + chr(34) + "object-position:" + page["hero_pos"] + chr(34) if page.get("hero_pos") else ""}/>'
         # The wash is inline rather than a class: these heroes sit over Pena in
         # full sun, where the site's standard gradient leaves white text on a
         # pale wall. Inline also means it cannot be a class that was never
