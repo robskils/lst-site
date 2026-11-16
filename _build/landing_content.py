@@ -325,7 +325,17 @@ PAGES = [
         "stand": ("Group tour pricing looks arbitrary from the outside. It is not - it is "
                   "almost entirely decided by how many vehicles your party needs and how "
                   "many guides have to be in them."),
-        "hero": "/images/cabo-da-roca.jpg",
+        # A close crop of a coach flank. Robin: "the wheel arch one we can
+        # use, I don't mind." It is the right subject for the page that is
+        # about what vehicles cost, and at hero scale the detail reads as
+        # texture rather than as a photograph of a bus.
+        #
+        # The crop starts below the top third on purpose: there is a third
+        # company's slogan across the top of the source, and a name that is
+        # not ours has no business in our hero.
+        "hero": "/images/coach-detail.jpg",
+        "hero_alt": "The flank of a midi-coach",
+        "hero_pos": "center 62%",
         "cta": "Want the real number for your group?",
         "cta_sub": ("Send the date and the headcount. A quote takes us an afternoon, not a "
                     "fortnight, and it comes itemised."),
