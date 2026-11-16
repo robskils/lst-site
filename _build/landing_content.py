@@ -145,7 +145,19 @@ PAGES = [
         "stand": ("A delegate day is judged on two things: whether the coach left when it "
                   "said it would, and whether anybody was left behind. Everything else is "
                   "the pleasant part."),
-        "hero": "/images/sintra-quinta-regaleira.jpg",
+        # A full-size coach outside a terminal with the holds open, suitcases
+        # on the pavement and people loading them. Pexels, free for commercial
+        # use, no attribution required:
+        # pexels.com/photo/modern-coach-bus-at-airport-terminal-40919466/
+        #
+        # It is a delegate day in one frame - the transfer, the luggage, the
+        # size of vehicle that moves forty people - which is what this page is
+        # about. It is Spain rather than Portugal and the coach carries
+        # another operator's name on the rear flank; Robin's own test applies,
+        # "to give an impression more than an actuality".
+        "hero": "/images/coach-luggage.jpg",
+        "hero_alt": "Passengers loading luggage into a full-size coach outside a terminal",
+        "hero_pos": "center 66%",
         "cta": "Send us the brief.",
         "cta_sub": ("Numbers, hotel, the time they have to be back, and anything the agenda "
                     "will not move. We will come back with a plan and a single price."),
