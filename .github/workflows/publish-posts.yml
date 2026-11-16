@@ -1,0 +1,13 @@
+name: Publish posts
+on:
+  schedule:
+    - cron: "0 10 * * 2,5"
+  workflow_dispatch:
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash _build/publish.sh
