@@ -1,7 +1,14 @@
 name: Publish posts
 on:
   schedule:
-    - cron: "0 10 * * 2,5"
+    # Daily, and not on the hour. GitHub drops scheduled runs when the
+    # minute is busy and minute 0 is the busiest there is: Tuesday 17
+    # November's 10:00 run never fired at all, and the post written that
+    # morning sat unpublished with nothing to say so. Daily costs nothing,
+    # because publish.sh only ever publishes what the CRM has already
+    # written - on a day with nothing waiting it commits nothing - and it
+    # means a dropped run delays a post by a day rather than by three.
+    - cron: "23 10 * * *"
   workflow_dispatch:
 jobs:
   go:
