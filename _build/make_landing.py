@@ -265,6 +265,21 @@ def build(skeleton, page):
         # compiled.
         '<div class="absolute inset-0" style="background:linear-gradient(to bottom,'
         'rgba(0,0,0,.42) 0%,rgba(0,0,0,.34) 35%,rgba(0,0,0,.62) 72%,rgba(0,0,0,.78) 100%)"></div>'
+        # A SECOND WASH, ON THE SIDE THE WORDS ARE ON. The vertical gradient
+        # above is tuned for a hero whose subject is scenery: it darkens top
+        # and bottom and leaves the middle alone, which is right over Pena and
+        # wrong over a busy street. On Rua Augusta the standfirst sat across a
+        # crowd at its lightest point and had to be squinted at.
+        #
+        # Darkening the whole picture to fix one corner is the wrong trade -
+        # it is the light in that photograph that makes it worth using. So
+        # the page can ask for a wash that falls away to nothing by the middle
+        # of the frame: the text side gets its contrast, the picture keeps its
+        # morning. Opt-in, so the three pages that do not need it are
+        # untouched.
+        + ('<div class="absolute inset-0" style="background:linear-gradient(to right,'
+           'rgba(0,0,0,.48) 0%,rgba(0,0,0,.34) 28%,rgba(0,0,0,.10) 55%,rgba(0,0,0,0) 72%)"></div>'
+           if page.get("hero_wash_left") else '') +
         '</div>'
         '<div class="relative h-full container-page flex flex-col justify-end pb-20 md:pb-24" '
         'style="color:var(--color-ivory)">'

@@ -26,13 +26,30 @@ PAGES = [
                   "vehicle a private day becomes a different exercise - and there is a "
                   "constraint at the top of the hill in Sintra that almost nobody "
                   "mentions until it is too late to change it."),
-        # Two coaches at Belem Tower - our transport partner's, used with their
-# permission. It is the page in one picture: the right city, the right
-# vehicles, and two of them, which is the whole "a guide in every
-# vehicle" argument before a word is read.
-        "hero": "/images/coaches-belem.jpg",
-        "hero_alt": "Two coaches parked in front of Bel\u00e9m Tower in Lisbon",
-        "hero_pos": "center 76%",
+        # Rua Augusta towards the Arco, 19 November 2026. The two coaches at
+        # Belem were here before and did not survive the shape of a hero:
+        # that photograph is 3:2 with its subject in the bottom third and the
+        # tower top right, so cropped to a wide band it gave either coach
+        # flank or empty sky, and the dark wash the white text needs took the
+        # golden light out of whichever you chose. Robin: "large group tours
+        # lisbon image isn't doing it for me, can we try another one?"
+        #
+        # This one is built the right way round for the job: interest across
+        # the whole width, the arch holding the centre, the calcada running
+        # out of the bottom of the frame, and people at the scale the page is
+        # actually about. It sells the day rather than the vehicle, which is
+        # also the honest order - nobody books a coach, they book Lisbon.
+        #
+        # hero_pos is set rather than left out even though 50% is the centre,
+        # because the template only switches the ken-burns drift off when a
+        # position is given, and a photograph that is ABOUT something holds
+        # still.
+        "hero": "/images/lisbon-rua-augusta.jpg",
+        "hero_alt": "Rua Augusta in Lisbon, busy with people, looking towards the Arco da Rua Augusta",
+        "hero_pos": "center 50%",
+        # Bright, busy and lit from the far end: the standfirst sat across a
+        # crowd with almost no wash on it. This adds one on the left only.
+        "hero_wash_left": True,
         "cta": "Tell us the number and the date.",
         "cta_sub": ("Those two facts decide almost everything else. We will come back with "
                     "the vehicles, the guides and a price - not a brochure."),
