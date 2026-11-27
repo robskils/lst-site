@@ -38,6 +38,7 @@ urls.append("/")
 for f in sorted(glob.glob(f"{DST}/**/index.html", recursive=True)):
     rel = f.replace(DST, "").replace("/index.html", "/")
     if rel == "/": continue
+    if rel == "/notrack/": continue  # the analytics opt-out switch: noindex, never listed
     urls.append(rel)
 
 today = date.today().isoformat()
