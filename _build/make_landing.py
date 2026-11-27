@@ -181,6 +181,25 @@ def section_html(sec):
                 f'<div class="eyebrow"><span class="rule mr-3"></span>{esc(sec["eyebrow"])}</div>'
                 f'<h2 class="display text-3xl md:text-5xl mt-5 max-w-3xl">{esc(sec["title"])}</h2>'
                 f'<div class="mt-10 grid gap-10 md:grid-cols-3">{cards}</div></div></section>')
+    if kind == "photos":
+        # Three photographs in a row, each with a plain caption under it. Added
+        # for the boat page (27 November 2026), which unlike the coach pages HAS
+        # real pictures of the thing it sells. Only classes already compiled
+        # into lst.css (see the rule at the top), sizing inline.
+        figs = "".join(
+            '<figure style="margin:0">'
+            '<div style="aspect-ratio:4/3;overflow:hidden">'
+            f'<img src="{esc(src)}" alt="{esc(alt)}" loading="lazy" '
+            f'class="h-full w-full object-cover" style="object-position:{pos}"/></div>'
+            f'<figcaption class="mt-4 text-base text-muted-foreground leading-relaxed">{esc(cap)}</figcaption>'
+            '</figure>'
+            for src, alt, cap, pos in sec["items"])
+        head = ''
+        if sec.get("title"):
+            head = (f'<div class="eyebrow"><span class="rule mr-3"></span>{esc(sec["eyebrow"])}</div>'
+                    f'<h2 class="display text-3xl md:text-5xl mt-5 mb-10 max-w-3xl">{esc(sec["title"])}</h2>')
+        return (f'<section class="container-page py-16 md:py-20">{head}'
+                f'<div class="grid gap-10 md:grid-cols-3">{figs}</div></section>')
     raise ValueError(kind)
 
 
@@ -294,7 +313,8 @@ def build(skeleton, page):
           '<div class="eyebrow">Next</div>'
           f'<h2 class="display text-4xl md:text-6xl mt-6 max-w-3xl mx-auto">{esc(page["cta"])}</h2>'
           f'<p class="mt-6 max-w-xl mx-auto text-lg text-muted-foreground">{page["cta_sub"]}</p>'
-          '<div class="mt-10"><a href="/contact/" class="btn-ink">Tell us about your group</a></div>'
+          f'<div class="mt-10"><a href="{esc(page.get("cta_href", "/contact/"))}" class="btn-ink">'
+          f'{esc(page.get("cta_button", "Tell us about your group"))}</a></div>'
           '</section>'
         + '</main>')
     s = re.sub(r'<main class="flex-1">.*?</main>', lambda _: main, s, count=1, flags=re.S)

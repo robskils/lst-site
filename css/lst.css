@@ -4573,3 +4573,15 @@ form textarea::placeholder {
   border-color: var(--color-gold);
 }
 
+
+/* Header on tablets and small laptops (27 Nov 2026). With Boats added the
+   desktop nav no longer fits below ~1200px: at 820px it ran 190px off the
+   screen. Between the md breakpoint and 1200px the header uses the menu
+   button instead. Hand-written, because this compiled Tailwind has no lg/xl. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  header nav.hidden { display: none !important; }
+  header a.hidden[href="/contact/"], header a.hidden[href$="/contacto/"], header a.hidden[href="/fr/contact/"] { display: none !important; }
+  header button[aria-label="Toggle menu"] { display: inline-flex !important; }
+}
+/* The footer email ran 10px off a 820px screen in the four-column footer. */
+footer a[href^="mailto:"] { overflow-wrap: anywhere; }

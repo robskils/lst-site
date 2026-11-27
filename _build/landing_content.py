@@ -453,4 +453,153 @@ PAGES = [
              "J&eacute;ronimos &euro;18."),
         ],
     },
+    # ──────────────────────────────────────────────────────────────────────
+    # Robin, 27 November 2026: "Let's big up those boat services on LST. We
+    # want a slice of that action!" and "We're not calling it Skipper Pedro
+    # explicitly." So: no names of the skipper or of the boats, and no fleet
+    # claimed - we place the party on the boat that fits. Figures (up to 200,
+    # Tagus and Sado, crew/fuel/insurance in the price, Doca de Santo Amaro
+    # and Belem, the sizes 18/80/200) are the skipper's own, from
+    # skipperpedro-site. Unlike the car pages, any size is ours here: a boat
+    # enquiry is never forwarded on the small-job rule (lst-pp-admin
+    # forwardPlan), and it reaches the form pre-set to "Boat trip".
+    {
+        "slug": "private-boat-trips-lisbon",
+        "title": "Private Boat Trips in Lisbon | Sunset Sails to 200-Guest Parties",
+        "desc": ("Private boats on the Tagus and the Sado for any size of party: sunset sails, "
+                 "birthdays, company days and dolphin trips, from two guests to two hundred. "
+                 "Crew, fuel and insurance in every price."),
+        "service": "Private boat trips and events",
+        "eyebrow": "On the water",
+        "h1": "Private boats on the Tagus, for two guests or two hundred.",
+        "stand": ("Lisbon was built to be seen from the river. We find the boat that fits the "
+                  "day - a sailing yacht for a few friends, a catamaran for a birthday, a river "
+                  "boat with a bar and a dance floor for the whole company - and bring the "
+                  "crew, the food and the plan."),
+        # Wide, sharp and full of the thing itself: the tall ship under sail
+        # is the only boat photograph big enough to hold a full-width hero.
+        "hero": "/images/boat-tall-ship.jpg",
+        "hero_alt": "A three-masted tall ship under sail on the Tagus, with guests on deck",
+        "hero_pos": "center 55%",
+        "hero_wash_left": True,
+        "cta": "Tell us the number, the date and the occasion.",
+        "cta_sub": ("We will come back with the boat that fits, what it can do with your time, "
+                    "and a price for all of it."),
+        "cta_href": "/contact/?tour=Boat%20trip",
+        "cta_button": "Ask about a boat",
+        "sections": [
+            {"kind": "prose", "eyebrow": "Why the river",
+             "title": "The best view of Lisbon is from the water.",
+             "paras": [
+                 "From the Tagus the whole city lines up for you: the Pra&ccedil;a do Com&eacute;rcio "
+                 "arcades, Alfama climbing to the castle, the 25 de Abril bridge overhead, and "
+                 "Bel&eacute;m with its tower and its monument to the navigators. Every one of them "
+                 "was built to be seen from a ship.",
+                 "For a group there is a second reason. On a boat everybody is in one place, "
+                 "sitting down, with a drink, and nobody is queuing for anything. It is the "
+                 "easiest few hours of a group day to run, and usually the one they talk about "
+                 "afterwards.",
+                 "Boats leave from the marinas at Doca de Santo Amaro and Doca de Bel&eacute;m in "
+                 "Lisbon, and from Set&uacute;bal on the Sado for the dolphins. We confirm the "
+                 "meeting point when you book."]},
+            {"kind": "photos", "items": [
+                ("/images/boat-sunset.jpg", "A sailing boat on the Tagus at sunset, with Lisbon behind",
+                 "Sunset on the Tagus: two golden hours past the city and under the bridge.", "center 50%"),
+                ("/images/boat-catamaran.jpg", "A catamaran full of guests under sail on the Tagus",
+                 "A catamaran for a birthday, a hen party or a long afternoon with friends.", "center 50%"),
+                ("/images/boat-praca-comercio.jpg", "A sailing yacht passing the Praca do Comercio in Lisbon",
+                 "The Praça do Comércio from the river, the way it was meant to be arrived at.", "center 60%"),
+            ]},
+            {"kind": "table", "eyebrow": "The right boat",
+             "title": "The boat follows the party.",
+             "lede": ("We are not tied to one boat. We find the one that fits the number, the date "
+                      "and the mood, from a yacht for a handful to a river boat for two hundred."),
+             "head": ["Guests", "The kind of boat", "Good for"],
+             "rows": [
+                 ["Up to 18", "Sailing yachts and catamarans",
+                  "Sunset sails, proposals, families, a few friends"],
+                 ["19 to 80", "Large catamarans and party boats, with a bar and room to dance",
+                  "Birthdays, hen and stag parties, team afternoons"],
+                 ["81 to 200", "River boats with a saloon, and tall ships",
+                  "Company parties, banquets, wedding welcome evenings"],
+             ],
+             "foot": ("Crew, fuel and insurance are in every price. Food, drink and music are "
+                      "arranged to suit the occasion, from a bar and canap&eacute;s to a seated dinner.")},
+            {"kind": "list", "eyebrow": "Ways to spend the time",
+             "title": "An hour, an afternoon or a whole day.",
+             "items": [
+                 ("Sunset on the Tagus.",
+                  "About two hours past the Pra&ccedil;a do Com&eacute;rcio, under the bridge and "
+                  "along Bel&eacute;m, timed for the light."),
+                 ("Cascais and the coast.",
+                  "About four hours out past the Bugio lighthouse, to swim, paddleboard and have "
+                  "lunch at anchor off Cascais."),
+                 ("Arr&aacute;bida, Sesimbra and the dolphins of the Sado.",
+                  "A full day south from Set&uacute;bal: turquoise coves, a long lunch and the "
+                  "estuary's resident dolphins."),
+                 ("Celebrations.",
+                  "Birthdays, anniversaries, hen and stag parties and proposals, with the music "
+                  "and the food to match."),
+                 ("Company days.",
+                  "Team building on deck, a launch, a results party or a conference dinner on "
+                  "the water."),
+                 ("Take the helm.",
+                  "Anyone who wants to can steer for a while, and sailing lessons can be arranged "
+                  "for those who want to learn properly."),
+             ]},
+            {"kind": "photos", "eyebrow": "On board", "title": "Room for a proper party.",
+             "items": [
+                ("/images/boat-saloon-dining.jpg", "A boat saloon set for a seated dinner",
+                 "A saloon set for dinner, with the river on every side.", "center 50%"),
+                ("/images/boat-company-day.jpg", "A company group in matching shirts on deck",
+                 "A company day: one team, one boat, one afternoon.", "center 40%"),
+                ("/images/boat-dolphins.jpg", "Dolphins swimming beside a catamaran",
+                 "The Sado's dolphins, an hour south of Lisbon.", "center 50%"),
+             ]},
+            {"kind": "prose", "eyebrow": "Land and water",
+             "title": "Put a boat at the end of a day on land.",
+             "paras": [
+                 "The river works best as the last chapter of a day we are already running. "
+                 "Sintra's palaces in the morning, lunch, and then down to Bel&eacute;m for the "
+                 "boat as the light goes gold. Or a Lisbon walking morning and an afternoon at "
+                 "anchor off Cascais.",
+                 "We plan both halves together, so the coach meets the boat and the boat meets "
+                 "the dinner, and you have one person to call about all of it.",
+                 "If the wind is too strong to sail safely, the skipper decides on the day, and "
+                 "we move the trip to another time. You will hear from us early, not at the "
+                 "marina."]},
+            {"kind": "links", "eyebrow": "More",
+             "title": "If you are planning for a group.",
+             "items": [
+                 ("Large group tours",
+                  "Days on land for ten to eighty people, and what changes above a dozen.",
+                  "/large-group-tours-lisbon/"),
+                 ("Corporate days out of Lisbon",
+                  "Conference groups, incentives and team days, with a boat to finish.",
+                  "/corporate-day-trips-lisbon/"),
+                 ("Wedding guests",
+                  "A welcome evening on the river, and getting everyone to the quinta and home.",
+                  "/wedding-guest-transport-lisbon-sintra/")]},
+        ],
+        "faq": [
+            ("How many people can come on a private boat trip in Lisbon?",
+             "Anything from two guests to about two hundred. Up to eighteen fits a sailing yacht "
+             "or catamaran, up to eighty a large catamaran or party boat, and up to two hundred "
+             "a river boat or tall ship."),
+            ("Where do the boats leave from?",
+             "In Lisbon from the marinas at Doca de Santo Amaro and Doca de Belém. Trips to "
+             "see the dolphins leave from Setúbal, on the Sado. We confirm the meeting point "
+             "when you book."),
+            ("What is included in the price?",
+             "The boat, the skipper and crew, fuel and insurance. Food, drink and music are "
+             "arranged to order and quoted with the boat, so you have one price for the day."),
+            ("What happens if the weather is bad?",
+             "If the wind is too strong to sail safely, the skipper decides on the day and we "
+             "move the trip to another time. We tell you as early as we can."),
+            ("Can a boat trip be added to a tour?",
+             "Yes, and it is often the best part of the day: a sunset sail from Belém after "
+             "a morning in Sintra, or an afternoon off Cascais after a Lisbon morning. We plan "
+             "both together."),
+        ],
+    },
 ]

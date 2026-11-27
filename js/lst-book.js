@@ -159,6 +159,19 @@ var T = window.BK_T || {};
     echoDate();
       });
     });
+
+    /* Arriving from a page that already knows what the visitor wants:
+       /contact/?tour=Boat%20trip (the boat page and the homepage boat block)
+       opens with that pill chosen, so nobody has to find it again. Matched on
+       data-tour, which is English on every language's form. */
+    var want = '';
+    try { want = new URLSearchParams(location.search).get('tour') || ''; } catch (e) {}
+    if (want) {
+      [].forEach.call(document.querySelectorAll('.tour-pill-btn'), function (b) {
+        if (b.getAttribute('data-tour').toLowerCase() === want.toLowerCase() &&
+            chosen.indexOf(b.getAttribute('data-tour')) === -1) b.click();
+      });
+    }
   }
 
   /* ── THE DATE PICKER ──────────────────────────────────────────────────────
