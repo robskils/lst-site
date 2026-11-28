@@ -134,7 +134,7 @@ PAGES = [
         "faq": [
             ("How many people can you take on a private tour?",
              "From seven up to around eighty in a single day, using as many vehicles as the "
-             "party needs with a licensed guide in each. Larger numbers are possible with "
+             "party needs with a guide in each. Larger numbers are possible with "
              "more notice."),
             ("Can a coach get to Pena Palace in Sintra?",
              "Vehicles of roughly twenty-two seats and under reach the palace gate. Full-size "
@@ -218,7 +218,7 @@ PAGES = [
             {"kind": "prose", "eyebrow": "The commercial part",
              "title": "How we quote, and what is in it.",
              "paras": [
-                 "One figure for the day, covering the vehicles, the licensed guides, fuel, "
+                 "One figure for the day, covering the vehicles, the guides, fuel, "
                  "tolls, parking and the driver's hours. Entry tickets are quoted separately "
                  "and at cost, because they change by site and by age band and we would "
                  "rather show you the real number than bury a margin in it.",
@@ -244,7 +244,7 @@ PAGES = [
         ],
         "faq": [
             ("Can you handle a conference group of eighty?",
-             "Yes. Eighty people is four vehicles and four licensed guides, and it needs "
+             "Yes. Eighty people is four vehicles and four guides, and it needs "
              "more notice than a smaller group because the vehicles and the timed tickets "
              "both have to be held."),
             ("Will we get an invoice for our finance team?",
@@ -384,7 +384,7 @@ PAGES = [
                  "confirm numbers. We will always tell you where the nearest line is."]},
             {"kind": "diagram", "eyebrow": "The ladder", "figure": "ladder",
              "title": "Where the steps are.",
-             "lede": ("Each step is a vehicle and the licensed guide who has to be in it. "
+             "lede": ("Each step is a vehicle and the guide who has to be in it. "
                       "Everything else - fuel, tolls, parking, the driver's day - scales with "
                       "the vehicles too.")},
             {"kind": "table", "eyebrow": "Worked examples",
@@ -411,8 +411,8 @@ PAGES = [
                  ("In: the vehicles.",
                   "Fuel, tolls, parking, insurance and the driver's hours, for as many "
                   "vehicles as the party needs."),
-                 ("In: a licensed guide in each one.",
-                  "Officially accredited, in English - other languages on request and with "
+                 ("In: a guide in each one.",
+                  "In English - other languages on request and with "
                   "notice."),
                  ("In: the planning.",
                   "An hour-by-hour plan before you arrive, tickets booked in the right names "
@@ -441,7 +441,7 @@ PAGES = [
         "faq": [
             ("How much is a private tour for a group of forty?",
              "Indicatively &euro;1,300 to &euro;1,600 for a full guided day with two "
-             "midi-coaches and two licensed guides, which is about &euro;36 a head. Entry "
+             "midi-coaches and two guides, which is about &euro;36 a head. Entry "
              "tickets and lunch are extra and billed at cost."),
             ("Why does the price per person go up for a smaller group?",
              "Because you are paying for vehicles, not seats. A party of twenty-five needs "
